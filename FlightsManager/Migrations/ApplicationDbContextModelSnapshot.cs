@@ -55,22 +55,15 @@ namespace FlightsManager.Migrations
 
             modelBuilder.Entity("FlightsManager.Data.Reservation", b =>
                 {
+                    b.Property<string>("ID")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("FlightID")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                    b.HasKey("ID");
 
-                    b.Property<string>("Nationality")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TicketType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("FlightID", "UserId");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
+                    b.HasIndex("FlightID");
 
                     b.ToTable("Reservation");
                 });
@@ -297,8 +290,19 @@ namespace FlightsManager.Migrations
                     b.Property<string>("MiddleName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Nationality")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReservationID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("TicketType")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("UserPIN")
                         .HasColumnType("nvarchar(max)");
+
+                    b.HasIndex("ReservationID");
 
                     b.HasDiscriminator().HasValue("ApplicationUser");
                 });
@@ -307,15 +311,7 @@ namespace FlightsManager.Migrations
                 {
                     b.HasOne("FlightsManager.Data.Flight", "Flight")
                         .WithMany("Reservations")
-                        .HasForeignKey("FlightID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FlightsManager.Data.ApplicationUser", "ApplicationUser")
-                        .WithOne("Reservation")
-                        .HasForeignKey("FlightsManager.Data.Reservation", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FlightID");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -367,6 +363,14 @@ namespace FlightsManager.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("FlightsManager.Data.ApplicationUser", b =>
+                {
+                    b.HasOne("FlightsManager.Data.Reservation", "Reservation")
+                        .WithMany("Passangers")
+                        .HasForeignKey("ReservationID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
