@@ -37,6 +37,7 @@
                 <td>@Html.DisplayFor(m => item.Capacity)</td>
                 <td>@Html.DisplayFor(m => item.BusinessClassCapacity)</td>
                 <td>
+                    <a asp-action="Detail" asp-route-id="@item.AirplaneID">Detail</a>
                     <a asp-action="Edit" asp-route-id="@item.AirplaneID">Edit</a>
                     <a asp-action="Delete" asp-route-id="@item.AirplaneID">Delete</a>
                 </td>

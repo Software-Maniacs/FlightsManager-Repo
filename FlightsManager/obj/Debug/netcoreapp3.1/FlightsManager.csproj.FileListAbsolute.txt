@@ -451,3 +451,4 @@ D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Reserv
 D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Reservation\PassangerCount.cshtml.g.cs
 D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\FlightsManager.csprojAssemblyReference.cache
 D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Reservation\Detail.cshtml.g.cs
+D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Flight\Detail.cshtml.g.cs

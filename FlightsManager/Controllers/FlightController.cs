@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using FlightsManager.Data;
 using FlightsManager.Models.Base;
 using FlightsManager.Models.Flight;
+using FlightsManager.Models.Reservation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -160,6 +161,44 @@ namespace FlightsManager.Controllers
 
                 return RedirectToAction(nameof(Index));
             }
+
+            return View(model);
+        }
+
+        public IActionResult Detail(string? id)
+        {
+            List<Reservation> reservations = db.Reservation
+                .Where(r => r.FlightID == id)
+                .ToList();
+
+            List<ReservationDetailVM> list = new List<ReservationDetailVM>();
+
+            for(int i = 0; i < reservations.Count; i++)
+            {
+                ReservationDetailVM reservationDetail = new ReservationDetailVM()
+                {
+                    Items = db.ApplicationUser
+                        .Where(p => p.ReservationID == reservations[i].ID)
+                        .Select(p => new ReservationVM()
+                        {
+                            FirstName = p.FirstName,
+                            MiddleName = p.MiddleName,
+                            LastName = p.LastName,
+                            Email = p.Email,
+                            Nationality = p.Nationality,
+                            PIN = p.UserPIN,
+                            TelephoneNumber = p.PhoneNumber,
+                            TicketType = p.TicketType
+                        }).ToList()
+                };
+
+                list.Add(reservationDetail);
+            }
+
+            FlightDetailVM model = new FlightDetailVM()
+            {
+                Items = list
+            };
 
             return View(model);
         }
