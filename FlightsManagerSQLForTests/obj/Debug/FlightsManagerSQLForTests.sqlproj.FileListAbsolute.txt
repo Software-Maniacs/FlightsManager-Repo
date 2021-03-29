@@ -1,0 +1,6 @@
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManagerSQLForTests\bin\Debug\FlightsManagerSQLForTests.dacpac
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManagerSQLForTests\bin\Debug\FlightsManagerSQLForTests.dll
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManagerSQLForTests\bin\Debug\FlightsManagerSQLForTests.pdb
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManagerSQLForTests\obj\Debug\FlightsManagerSQLForTests.dll
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManagerSQLForTests\obj\Debug\FlightsManagerSQLForTests.pdb
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManagerSQLForTests\obj\Debug\FlightsManagerSQLForTests.sqlprojAssemblyReference.cache
