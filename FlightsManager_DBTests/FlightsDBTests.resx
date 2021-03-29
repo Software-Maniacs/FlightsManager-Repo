@@ -150,6 +150,10 @@ AND BusinessClassCapacity = @BusinessClassCapacity
     <value>/*
   delete test flight if it already exists
 */
+
+DECLARE @ID AS NVARCHAR(450) = '232525562362727';
+DECLARE @FlightID AS NVARCHAR(450) = '12521636';
+
 DECLARE @AirplaneID as NVARCHAR(450) = '12521636';
 DECLARE @DestinationFrom as NVARCHAR(MAX) =  'Sofia';
 DECLARE @DestinationTo as NVARCHAR (MAX) = 'Burgas';
@@ -159,6 +163,10 @@ DECLARE @AirplaneType as NVARCHAR(MAX) = 'Beautiful';
 DECLARE @PilotName as NVARCHAR(MAX) = 'Jerry Seinfeld';
 DECLARE @Capacity as INT = 245;
 DECLARE @BusinessClassCapacity as INT = 23
+
+
+DELETE FROM dbo.Reservation WHERE ID = @ID
+AND FlightID = @FlightID
 
 DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID
 AND DestinationFrom = @DestinationFrom
@@ -212,6 +220,10 @@ AND PilotName = @PilotName
     <value>/*
    adds flight that will be updated
 */
+
+	DECLARE @ID AS NVARCHAR(450) = '232525562362727';
+	DECLARE @FlightID AS NVARCHAR(450) = '12521636';
+
 	DECLARE @AirplaneID as NVARCHAR(450) = '12521636';
 	DECLARE @DestinationFrom as NVARCHAR(MAX) =  'Sofia';
 	DECLARE @DestinationTo as NVARCHAR (MAX) = 'Burgas';
@@ -220,7 +232,40 @@ AND PilotName = @PilotName
 	DECLARE @AirplaneType as NVARCHAR(MAX) = 'Beautiful';
 	DECLARE @PilotName as NVARCHAR(MAX) = 'Jerry Seinfeld';
 	DECLARE @Capacity as INT = 245;
-	DECLARE @BusinessClassCapacity as INT = 23
+	DECLARE @BusinessClassCapacity as INT = 23;
+
+	DECLARE @AirplaneID2 as NVARCHAR(450) = '12521636';
+	DECLARE @DestinationFrom2 as NVARCHAR(MAX) =  'Sofia';
+	DECLARE @DestinationTo2 as NVARCHAR (MAX) = 'Burgas';
+	DECLARE @TakesOff2 as DATETIME2(7) = '2019-05-25 20:23:00';
+	DECLARE @Landing2 as DATETIME2(7) = '2019-05-27 15:32:00';
+	DECLARE @AirplaneType2 as NVARCHAR(MAX) = 'Beautiful';
+	DECLARE @PilotName2 as NVARCHAR(MAX) = 'Bill Burr';
+	DECLARE @Capacity2 as INT = 245;
+	DECLARE @BusinessClassCapacity2 as INT = 23;
+
+	DELETE FROM dbo.Reservation WHERE ID = @ID
+	AND FlightID = @FlightID
+
+	DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+	AND DestinationFrom = @DestinationFrom
+	AND DestinationTo = @DestinationTo
+	AND TakesOff = @TakesOff
+	AND Landing = @Landing
+	AND AirplaneType = @AirplaneType
+	AND PilotName = @PilotName
+	AND Capacity = @Capacity
+	AND BusinessClassCapacity = @BusinessClassCapacity
+
+	DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+	AND DestinationFrom = @DestinationFrom
+	AND DestinationTo = @DestinationTo
+	AND TakesOff = @TakesOff
+	AND Landing = @Landing
+	AND AirplaneType = @AirplaneType
+	AND PilotName = @PilotName2
+	AND Capacity = @Capacity
+	AND BusinessClassCapacity = @BusinessClassCapacity
 	
 	INSERT INTO dbo.Flight (AirplaneID, DestinationFrom,
 	DestinationTo, TakesOff, Landing, AirplaneType, PilotName, Capacity,
@@ -241,7 +286,7 @@ DECLARE @Landing as DATETIME2(7) = '2019-05-27 15:32:00';
 DECLARE @AirplaneType as NVARCHAR(MAX) = 'Beautiful';
 DECLARE @PilotName as NVARCHAR(MAX) = 'Bill Burr';
 DECLARE @Capacity as INT = 245;
-DECLARE @BusinessClassCapacity as INT = 23
+DECLARE @BusinessClassCapacity as INT = 23;
 
 DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID
 AND DestinationFrom = @DestinationFrom
@@ -252,27 +297,6 @@ AND AirplaneType = @AirplaneType
 AND PilotName = @PilotName
 AND Capacity = @Capacity
 AND BusinessClassCapacity = @BusinessClassCapacity</value>
-  </data>
-  <data name="IsFlightRemovedCorrectly_PretestAction.SqlScript" xml:space="preserve">
-    <value>/*
-   adds flight that will be  removed
-*/
-	DECLARE @AirplaneID as NVARCHAR(450) = '12521636';
-	DECLARE @DestinationFrom as NVARCHAR(MAX) =  'Sofia';
-	DECLARE @DestinationTo as NVARCHAR (MAX) = 'Burgas';
-	DECLARE @TakesOff as DATETIME2(7) = '2019-05-25 20:23:00';
-	DECLARE @Landing as DATETIME2(7) = '2019-05-27 15:32:00';
-	DECLARE @AirplaneType as NVARCHAR(MAX) = 'Beautiful';
-	DECLARE @PilotName as NVARCHAR(MAX) = 'Jerry Seinfeld';
-	DECLARE @Capacity as INT = 245;
-	DECLARE @BusinessClassCapacity as INT = 23
-	
-	INSERT INTO dbo.Flight (AirplaneID, DestinationFrom,
-	DestinationTo, TakesOff, Landing, AirplaneType, PilotName, Capacity,
-	BusinessClassCapacity)
-	VALUES (@AirplaneID, @DestinationFrom,
-	@DestinationTo, @TakesOff, @Landing, @AirplaneType, @PilotName, @Capacity,
-	@BusinessClassCapacity)</value>
   </data>
   <data name="IsFlightRemovedCorrectly_TestAction.SqlScript" xml:space="preserve">
     <value>DECLARE @RC AS INT, @AirplaneID AS NVARCHAR (450), @DestinationFrom AS NVARCHAR (MAX), @DestinationTo AS NVARCHAR (MAX), @TakesOff AS DATETIME2 (7), @Landing AS DATETIME2 (7), @AirplaneType AS NVARCHAR (MAX), @PilotName AS NVARCHAR (MAX), @Capacity AS INT, @BusinessClassCapacity AS INT;
@@ -299,6 +323,44 @@ AND AirplaneType = @AirplaneType
 AND PilotName = @PilotName
 AND Capacity = @Capacity
 AND BusinessClassCapacity = @BusinessClassCapacity</value>
+  </data>
+  <data name="IsFlightRemovedCorrectly_PretestAction.SqlScript" xml:space="preserve">
+    <value>/*
+   adds flight that will be  removed
+*/
+
+	DECLARE @ID AS NVARCHAR(450) = '232525562362727';
+	DECLARE @FlightID AS NVARCHAR(450) = '12521636';
+
+	DECLARE @AirplaneID as NVARCHAR(450) = '12521636';
+	DECLARE @DestinationFrom as NVARCHAR(MAX) =  'Sofia';
+	DECLARE @DestinationTo as NVARCHAR (MAX) = 'Burgas';
+	DECLARE @TakesOff as DATETIME2(7) = '2019-05-25 20:23:00';
+	DECLARE @Landing as DATETIME2(7) = '2019-05-27 15:32:00';
+	DECLARE @AirplaneType as NVARCHAR(MAX) = 'Beautiful';
+	DECLARE @PilotName as NVARCHAR(MAX) = 'Jerry Seinfeld';
+	DECLARE @Capacity as INT = 245;
+	DECLARE @BusinessClassCapacity as INT = 23;
+
+	DELETE FROM dbo.Reservation WHERE ID = @ID
+	AND FlightID = @FlightID
+
+	DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+	AND DestinationFrom = @DestinationFrom
+	AND DestinationTo = @DestinationTo
+	AND TakesOff = @TakesOff
+	AND Landing = @Landing
+	AND AirplaneType = @AirplaneType
+	AND PilotName = @PilotName
+	AND Capacity = @Capacity
+	AND BusinessClassCapacity = @BusinessClassCapacity
+	
+	INSERT INTO dbo.Flight (AirplaneID, DestinationFrom,
+	DestinationTo, TakesOff, Landing, AirplaneType, PilotName, Capacity,
+	BusinessClassCapacity)
+	VALUES (@AirplaneID, @DestinationFrom,
+	@DestinationTo, @TakesOff, @Landing, @AirplaneType, @PilotName, @Capacity,
+	@BusinessClassCapacity)</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

@@ -47,8 +47,8 @@ namespace FlightsManager_DBTests
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction IsFlightUpdatedCorrectly_PretestAction;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction IsFlightUpdatedCorrectly_PosttestAction;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction IsFlightRemovedCorrectly_TestAction;
-            Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction IsFlightRemovedCorrectly_PretestAction;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.RowCountCondition rowCountCondition2;
+            Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction IsFlightRemovedCorrectly_PretestAction;
             this.IsFlightAddedCorrectlyData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
             this.IsFlightUpdatedCorrectlyData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
             this.IsFlightRemovedCorrectlyData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
@@ -61,8 +61,8 @@ namespace FlightsManager_DBTests
             IsFlightUpdatedCorrectly_PretestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
             IsFlightUpdatedCorrectly_PosttestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
             IsFlightRemovedCorrectly_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
-            IsFlightRemovedCorrectly_PretestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
             rowCountCondition2 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.RowCountCondition();
+            IsFlightRemovedCorrectly_PretestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
             // 
             // IsFlightAddedCorrectly_TestAction
             // 
@@ -107,6 +107,22 @@ namespace FlightsManager_DBTests
             // 
             resources.ApplyResources(IsFlightUpdatedCorrectly_PosttestAction, "IsFlightUpdatedCorrectly_PosttestAction");
             // 
+            // IsFlightRemovedCorrectly_TestAction
+            // 
+            IsFlightRemovedCorrectly_TestAction.Conditions.Add(rowCountCondition2);
+            resources.ApplyResources(IsFlightRemovedCorrectly_TestAction, "IsFlightRemovedCorrectly_TestAction");
+            // 
+            // rowCountCondition2
+            // 
+            rowCountCondition2.Enabled = true;
+            rowCountCondition2.Name = "rowCountCondition2";
+            rowCountCondition2.ResultSet = 1;
+            rowCountCondition2.RowCount = 0;
+            // 
+            // IsFlightRemovedCorrectly_PretestAction
+            // 
+            resources.ApplyResources(IsFlightRemovedCorrectly_PretestAction, "IsFlightRemovedCorrectly_PretestAction");
+            // 
             // IsFlightAddedCorrectlyData
             // 
             this.IsFlightAddedCorrectlyData.PosttestAction = IsFlightAddedCorrectly_PosttestAction;
@@ -124,22 +140,6 @@ namespace FlightsManager_DBTests
             this.IsFlightRemovedCorrectlyData.PosttestAction = null;
             this.IsFlightRemovedCorrectlyData.PretestAction = IsFlightRemovedCorrectly_PretestAction;
             this.IsFlightRemovedCorrectlyData.TestAction = IsFlightRemovedCorrectly_TestAction;
-            // 
-            // IsFlightRemovedCorrectly_TestAction
-            // 
-            IsFlightRemovedCorrectly_TestAction.Conditions.Add(rowCountCondition2);
-            resources.ApplyResources(IsFlightRemovedCorrectly_TestAction, "IsFlightRemovedCorrectly_TestAction");
-            // 
-            // IsFlightRemovedCorrectly_PretestAction
-            // 
-            resources.ApplyResources(IsFlightRemovedCorrectly_PretestAction, "IsFlightRemovedCorrectly_PretestAction");
-            // 
-            // rowCountCondition2
-            // 
-            rowCountCondition2.Enabled = true;
-            rowCountCondition2.Name = "rowCountCondition2";
-            rowCountCondition2.ResultSet = 1;
-            rowCountCondition2.RowCount = 0;
         }
 
         #endregion
