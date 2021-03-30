@@ -283,7 +283,7 @@ namespace FlightsManager.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("FlightsManager.Data.ApplicationUser", b =>
+            modelBuilder.Entity("FlightsManager.Data.IdentityUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -302,7 +302,7 @@ namespace FlightsManager.Migrations
                     b.Property<string>("UserPIN")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasDiscriminator().HasValue("ApplicationUser");
+                    b.HasDiscriminator().HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("FlightsManager.Data.Reservation", b =>
@@ -313,7 +313,7 @@ namespace FlightsManager.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FlightsManager.Data.ApplicationUser", "ApplicationUser")
+                    b.HasOne("FlightsManager.Data.IdentityUser", "IdentityUser")
                         .WithOne("Reservation")
                         .HasForeignKey("FlightsManager.Data.Reservation", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)

@@ -42,11 +42,11 @@ namespace FlightsManager.Data
             base.OnModelCreating(modelBuilder);
 
             /*base.OnModelCreating(modelBuilder);
-            modelBuilder.Ignore<IdentityUserLogin<string>>();
-            modelBuilder.Ignore<IdentityUserRole<string>>();
-            modelBuilder.Ignore<IdentityUserClaim<string>>();
-            modelBuilder.Ignore<IdentityUserToken<string>>();
-            modelBuilder.Ignore<IdentityUser<string>>();
+            modelBuilder.Ignore<ApplicationUserLogin<string>>();
+            modelBuilder.Ignore<ApplicationUserRole<string>>();
+            modelBuilder.Ignore<ApplicationUserClaim<string>>();
+            modelBuilder.Ignore<ApplicationUserToken<string>>();
+            modelBuilder.Ignore<ApplicationUser<string>>();
             modelBuilder.Ignore<ApplicationUser>();*/
 
             //}

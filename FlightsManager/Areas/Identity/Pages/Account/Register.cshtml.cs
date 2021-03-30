@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using FlightsManager.Data;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -19,15 +20,15 @@ namespace FlightsManager.Areas.Identity.Pages.Account
     [Authorize(Roles ="Admin")]
     public class RegisterModel : PageModel
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
         private readonly RoleManager<IdentityRole> _roleManager;
 
         public RegisterModel(
-            UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager,
+            UserManager<ApplicationUser> userManager,
+            SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
             RoleManager<IdentityRole> roleManager)
@@ -64,7 +65,32 @@ namespace FlightsManager.Areas.Identity.Pages.Account
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
 
+           // [Required]
             public string UserRole { get; set; }
+
+            [Required]
+            public string FirstName { get; set; }
+
+            [Required]
+            public string LasttName { get; set; }
+
+            [Required]
+            public string Address { get; set; }
+
+            [Required]
+            [StringLength(50, MinimumLength = 10,
+            ErrorMessage = "User name must have min length of 6 and max Length of 50")]
+            public string UserName { get; set; }
+
+            [Required]
+            [StringLength(10, MinimumLength = 10,
+            ErrorMessage = "User PIN must be 10 characters long")]
+            public string UserPIN { get; set; }
+
+            [Required]
+            [StringLength(10, MinimumLength = 10,
+            ErrorMessage = "Telephone number must be 10 characters long")]
+            public string TelephoneNumber { get; set; }
         }
 
         public void OnGet(string returnUrl = null)
@@ -78,12 +104,16 @@ namespace FlightsManager.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             var role = _roleManager.FindByIdAsync(Input.UserRole).Result;
+            
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
+                var user = new ApplicationUser { UserName = Input.UserName, Email = Input.Email, 
+                PhoneNumber=Input.TelephoneNumber, FirstName=Input.FirstName, LastName=Input.LasttName,
+                Address=Input.Address,UserPIN=Input.UserPIN};
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+                    var currentUser = _userManager.FindByIdAsync(user.Id);
                     _logger.LogInformation("User created a new account with password.");
                     await _userManager.AddToRoleAsync(user, role.Name);
                     /*var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
