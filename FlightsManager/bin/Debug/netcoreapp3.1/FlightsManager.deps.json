@@ -31,7 +31,6 @@
     ".NETCoreApp,Version=v3.1": {
       "FlightsManager/1.0.0": {
         "dependencies": {
-          "EnvDTE": "16.9.31023.347",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "3.1.10",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.13",
           "Microsoft.AspNetCore.Identity.UI": "3.1.13",
@@ -308,21 +307,6 @@
         },
         "compile": {
           "FlightsManager.dll": {}
-        }
-      },
-      "EnvDTE/16.9.31023.347": {
-        "dependencies": {
-          "Microsoft.VisualStudio.SDK.EmbedInteropTypes": "15.0.34",
-          "stdole": "16.9.31023.347"
-        },
-        "runtime": {
-          "lib/netstandard2.0/EnvDTE.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.50727.932"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/EnvDTE.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.13": {
@@ -1123,7 +1107,6 @@
       },
       "Microsoft.NETCore.Platforms/2.1.2": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
-      "Microsoft.VisualStudio.SDK.EmbedInteropTypes/15.0.34": {},
       "Microsoft.VisualStudio.Web.CodeGeneration/3.1.5": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "3.1.13",
@@ -1539,20 +1522,6 @@
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.provider.dynamic_cdecl.dll": {}
-        }
-      },
-      "stdole/16.9.31023.347": {
-        "dependencies": {
-          "Microsoft.VisualStudio.SDK.EmbedInteropTypes": "15.0.34"
-        },
-        "runtime": {
-          "lib/netstandard2.0/stdole.dll": {
-            "assemblyVersion": "7.0.3300.0",
-            "fileVersion": "7.0.9466.1"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/stdole.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -4087,13 +4056,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "EnvDTE/16.9.31023.347": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-3VAZ5YVjlaoWtFE1elGxiwShwTRGv+bl3bI3k+hcjsaItFiy5jr1eUqvIazL510n3hFxPOhPC8pgfQMtGVOtSQ==",
-      "path": "envdte/16.9.31023.347",
-      "hashPath": "envdte.16.9.31023.347.nupkg.sha512"
-    },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.13": {
       "type": "package",
       "serviceable": true,
@@ -4437,13 +4399,6 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
     },
-    "Microsoft.VisualStudio.SDK.EmbedInteropTypes/15.0.34": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-zDb7MrGyE5V5X91sul3cM5vEpiXL94fsxE+HITpBzsZwiOpu6um6S+aJV+lPL0RCddblj+tu1yfrlowm5rtSRQ==",
-      "path": "microsoft.visualstudio.sdk.embedinteroptypes/15.0.34",
-      "hashPath": "microsoft.visualstudio.sdk.embedinteroptypes.15.0.34.nupkg.sha512"
-    },
     "Microsoft.VisualStudio.Web.CodeGeneration/3.1.5": {
       "type": "package",
       "serviceable": true,
@@ -4709,13 +4664,6 @@
       "sha512": "sha512-RybfknbgdhjD+g38vyLA8Ram3CbivpZEUa+ZthtULROrEp81V8hxK30mIsAM9YFb3cOmnF/3hOIjhpVo9h72Lg==",
       "path": "sqlitepclraw.provider.dynamic_cdecl/2.0.3",
       "hashPath": "sqlitepclraw.provider.dynamic_cdecl.2.0.3.nupkg.sha512"
-    },
-    "stdole/16.9.31023.347": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-tOwc5D2mLPAAdEzfdwU74RcD36msOZASOtqJtqYdPRJ6djrP9rMurfW/YtOLX4nR3VeGIaNbcj5mV3w8dzQZkw==",
-      "path": "stdole/16.9.31023.347",
-      "hashPath": "stdole.16.9.31023.347.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",

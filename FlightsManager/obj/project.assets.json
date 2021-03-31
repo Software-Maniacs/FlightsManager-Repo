@@ -2,19 +2,6 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "EnvDTE/16.9.31023.347": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.VisualStudio.SDK.EmbedInteropTypes": "15.0.34",
-          "stdole": "16.9.31023.347"
-        },
-        "compile": {
-          "lib/netstandard2.0/EnvDTE.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/EnvDTE.dll": {}
-        }
-      },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.13": {
         "type": "package",
         "compile": {
@@ -817,12 +804,6 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.VisualStudio.SDK.EmbedInteropTypes/15.0.34": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.VisualStudio.SDK.EmbedInteropTypes.targets": {}
-        }
-      },
       "Microsoft.VisualStudio.Web.CodeGeneration/3.1.5": {
         "type": "package",
         "dependencies": {
@@ -1348,18 +1329,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/SQLitePCLRaw.provider.dynamic_cdecl.dll": {}
-        }
-      },
-      "stdole/16.9.31023.347": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.VisualStudio.SDK.EmbedInteropTypes": "15.0.34"
-        },
-        "compile": {
-          "lib/netstandard2.0/stdole.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/stdole.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -2856,23 +2825,6 @@
     }
   },
   "libraries": {
-    "EnvDTE/16.9.31023.347": {
-      "sha512": "3VAZ5YVjlaoWtFE1elGxiwShwTRGv+bl3bI3k+hcjsaItFiy5jr1eUqvIazL510n3hFxPOhPC8pgfQMtGVOtSQ==",
-      "type": "package",
-      "path": "envdte/16.9.31023.347",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "PackageIcon.png",
-        "envdte.16.9.31023.347.nupkg.sha512",
-        "envdte.nuspec",
-        "lib/net45/EnvDTE.dll",
-        "lib/net45/EnvDTE.xml",
-        "lib/netstandard2.0/EnvDTE.dll",
-        "lib/netstandard2.0/EnvDTE.xml"
-      ]
-    },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.13": {
       "sha512": "IeY0huSfF3FScBc6L8b6vNbvej0ZReo2VCoxkAl/YsUn7mmBgHwWIdlq/Ic2OOfHcIx65b/4jBeQTkBhNTYuzw==",
       "type": "package",
@@ -3986,18 +3938,6 @@
         "runtime.json"
       ]
     },
-    "Microsoft.VisualStudio.SDK.EmbedInteropTypes/15.0.34": {
-      "sha512": "zDb7MrGyE5V5X91sul3cM5vEpiXL94fsxE+HITpBzsZwiOpu6um6S+aJV+lPL0RCddblj+tu1yfrlowm5rtSRQ==",
-      "type": "package",
-      "path": "microsoft.visualstudio.sdk.embedinteroptypes/15.0.34",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/Microsoft.VisualStudio.SDK.EmbedInteropTypes.targets",
-        "microsoft.visualstudio.sdk.embedinteroptypes.15.0.34.nupkg.sha512",
-        "microsoft.visualstudio.sdk.embedinteroptypes.nuspec"
-      ]
-    },
     "Microsoft.VisualStudio.Web.CodeGeneration/3.1.5": {
       "sha512": "KSXhD6QzyoyNc52blbf5DJ7QNtul1VXcpOcYO5svlbFRRWjcB3+lpYTr5n9I6fcgMDGkhb4mndLZuXSTz0ukaA==",
       "type": "package",
@@ -4917,23 +4857,6 @@
         "lib/netstandard2.0/SQLitePCLRaw.provider.dynamic_cdecl.dll",
         "sqlitepclraw.provider.dynamic_cdecl.2.0.3.nupkg.sha512",
         "sqlitepclraw.provider.dynamic_cdecl.nuspec"
-      ]
-    },
-    "stdole/16.9.31023.347": {
-      "sha512": "tOwc5D2mLPAAdEzfdwU74RcD36msOZASOtqJtqYdPRJ6djrP9rMurfW/YtOLX4nR3VeGIaNbcj5mV3w8dzQZkw==",
-      "type": "package",
-      "path": "stdole/16.9.31023.347",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "PackageIcon.png",
-        "lib/net45/stdole.dll",
-        "lib/net45/stdole.xml",
-        "lib/netstandard2.0/stdole.dll",
-        "lib/netstandard2.0/stdole.xml",
-        "stdole.16.9.31023.347.nupkg.sha512",
-        "stdole.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -9107,7 +9030,6 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "EnvDTE >= 16.9.31023.347",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 3.1.10",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.13",
       "Microsoft.AspNetCore.Identity.UI >= 3.1.13",
@@ -9161,10 +9083,6 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
-          "EnvDTE": {
-            "target": "Package",
-            "version": "[16.9.31023.347, )"
-          },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
             "version": "[3.1.10, )"
@@ -9217,13 +9135,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file D:\\FlightsManager-Repo\\FlightsManager\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
