@@ -44,10 +44,6 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "EnvDTE": {
-              "target": "Package",
-              "version": "[16.9.31023.347, )"
-            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.10, )"
