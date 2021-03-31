@@ -26,5 +26,10 @@ namespace FlightsManager.Data
         public int BusinessClassCapacity { get; set; }
 
         public virtual ICollection<Reservation> Reservations { get; set; }
+
+        public override string ToString()
+        {
+            return this.DestinationFrom + " - " + this.DestinationTo;
+        }
     }
 }

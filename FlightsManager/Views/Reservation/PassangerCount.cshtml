@@ -1,0 +1,21 @@
+﻿@model FlightsManager.Models.Reservation.PassangerCountVM
+
+@{
+    ViewData["Title"] = "PassangerCount";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>PassangerCount</h1>
+
+<form asp-action="PassangerCount" asp-controller="Reservation" method="post">
+    <div>
+        <label asp-for="PassangerCount" class="control-label">How many tickets are you reserving?</label>
+        <input asp-for="PassangerCount" class=" form-control" value="" id="pages">
+        <span asp-validation-for="PassangerCount" class="text-danger"></span>
+        <input type="submit" value="OK" class="btn btn-primary" />
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">BackToList</a>
+</div>

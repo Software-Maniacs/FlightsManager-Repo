@@ -1,0 +1,618 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="IsReservationAddedCorrectly_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for dbo.AddReservation
+DECLARE @RC AS INT, @ID AS NVARCHAR (450), @FlightID AS NVARCHAR (450);
+
+SELECT @RC = 0,
+       @ID = '232525562362727',
+       @FlightID = '12521636';
+
+EXECUTE @RC = [dbo].[AddReservation] @ID, @FlightID;
+
+SELECT * FROM dbo.Reservation WHERE ID = @ID
+AND FlightID = @FlightID
+
+
+</value>
+  </data>
+  <data name="IsReservationAddedCorrectly_PretestAction.SqlScript" xml:space="preserve">
+    <value>/*
+  deletes reservation if it exists and adds values to flight and user table
+*/
+    /* values for reservation */
+	DECLARE @ID AS NVARCHAR(450) = '232525562362727';
+	DECLARE @FlightID AS NVARCHAR(450) = '12521636';
+	/* values for flight */
+	DECLARE @AirplaneID as NVARCHAR(450) = '12521636';
+	DECLARE @DestinationFrom as NVARCHAR(MAX) =  'Sofia';
+	DECLARE @DestinationTo as NVARCHAR (MAX) = 'Burgas';
+	DECLARE @TakesOff as DATETIME2(7) = '2019-05-25 20:23:00';
+	DECLARE @Landing as DATETIME2(7) = '2019-05-27 15:32:00';
+	DECLARE @AirplaneType as NVARCHAR(MAX) = 'Beautiful';
+	DECLARE @PilotName as NVARCHAR(MAX) = 'Jerry Seinfeld';
+	DECLARE @Capacity as INT = 245;
+	DECLARE @BusinessClassCapacity as INT = 23;
+	/* values for aspnetusers */
+	DECLARE @UserId AS NVARCHAR(450) = '232525562362727';
+	DECLARE @Email as NVARCHAR(256) = 'garry@gmail.com';
+	DECLARE @PasswordHash as NVARCHAR(MAX) = '2GOEDS';
+	DECLARE @EmailConfirmed AS BIT = 1;
+	DECLARE @Discriminator as NVARCHAR(MAX) = 'ApplicationUser'
+	DECLARE @PhoneNumber as NVARCHAR(MAX) = '0884351256';
+	DECLARE @FirstName as NVARCHAR(MAX) = 'Garry';
+	DECLARE @MiddleName as NVARCHAR(MAX) = 'Kimovich';
+	DECLARE @LastName as NVARCHAR(MAX) = 'Kasparov';
+	DECLARE @PhoneNumberConfirmed as BIT = 1;
+	DECLARE @TwoFactorEnabled as BIT = 0;
+	DECLARE @LockoutEnabled as BIT = 0;
+	DECLARE @AccessFailedCount as INT = 0;
+
+	DELETE FROM dbo.Reservation WHERE ID = @ID
+	AND FlightID = @FlightID
+
+	DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+	AND DestinationFrom = @DestinationFrom
+	AND DestinationTo = @DestinationTo
+	AND TakesOff = @TakesOff
+	AND Landing = @Landing
+	AND AirplaneType = @AirplaneType
+	AND PilotName = @PilotName
+	AND Capacity = @Capacity
+	AND BusinessClassCapacity = @BusinessClassCapacity
+
+	DELETE FROM dbo.AspNetUsers WHERE Id = @UserId
+	AND Email = @Email
+	AND EmailConfirmed = @EmailConfirmed
+	AND PasswordHash = @PasswordHash
+	AND PhoneNumber = @PhoneNumber
+	AND Discriminator = @Discriminator
+	AND FirstName = @FirstName
+	AND MiddleName = @MiddleName
+	AND LastName = @LastName
+	AND PhoneNumberConfirmed = @PhoneNumberConfirmed
+	AND TwoFactorEnabled = @TwoFactorEnabled
+	AND LockoutEnabled = @LockoutEnabled
+	AND AccessFailedCount = @AccessFailedCount
+
+	INSERT INTO dbo.Flight (AirplaneID, DestinationFrom,
+	DestinationTo, TakesOff, Landing, AirplaneType, PilotName, Capacity,
+	BusinessClassCapacity)
+	VALUES (@AirplaneID, @DestinationFrom,
+	@DestinationTo, @TakesOff, @Landing, @AirplaneType, @PilotName, @Capacity,
+	@BusinessClassCapacity)
+	
+	INSERT INTO dbo.AspNetUsers (Id, Email, EmailConfirmed, PasswordHash, PhoneNumber, PhoneNumberConfirmed,
+	TwoFactorEnabled, Discriminator, FirstName, MiddleName, LastName, LockoutEnabled, AccessFailedCount)
+	VALUES (@UserId, @Email, @EmailConfirmed, @PasswordHash, @PhoneNumber, @PhoneNumberConfirmed,
+	@TwoFactorEnabled, @Discriminator, @FirstName, @MiddleName, @LastName, @LockoutEnabled, @AccessFailedCount)
+	
+	DELETE FROM dbo.Reservation WHERE ID = @ID
+	AND FlightID = @FlightID
+
+
+</value>
+  </data>
+  <data name="IsReservationAddedCorrectly_PosttestAction.SqlScript" xml:space="preserve">
+    <value>/*
+  deletes reservation after test is done
+*/
+	DECLARE @ID AS NVARCHAR(450) = '232525562362727';
+	DECLARE @FlightID AS NVARCHAR(450) = '12521636';
+
+/* values for flight */
+	DECLARE @AirplaneID as NVARCHAR(450) = '12521636';
+	DECLARE @DestinationFrom as NVARCHAR(MAX) =  'Sofia';
+	DECLARE @DestinationTo as NVARCHAR (MAX) = 'Burgas';
+	DECLARE @TakesOff as DATETIME2(7) = '2019-05-25 20:23:00';
+	DECLARE @Landing as DATETIME2(7) = '2019-05-27 15:32:00';
+	DECLARE @AirplaneType as NVARCHAR(MAX) = 'Beautiful';
+	DECLARE @PilotName as NVARCHAR(MAX) = 'Jerry Seinfeld';
+	DECLARE @Capacity as INT = 245;
+	DECLARE @BusinessClassCapacity as INT = 23;
+	/* values for aspnetusers */
+	DECLARE @UserId AS NVARCHAR(450) = '232525562362727';
+	DECLARE @Email as NVARCHAR(256) = 'garry@gmail.com';
+	DECLARE @PasswordHash as NVARCHAR(MAX) = '2GOEDS';
+	DECLARE @EmailConfirmed AS BIT = 1;
+	DECLARE @Discriminator as NVARCHAR(MAX) = 'ApplicationUser'
+	DECLARE @PhoneNumber as NVARCHAR(MAX) = '0884351256';
+	DECLARE @FirstName as NVARCHAR(MAX) = 'Garry';
+	DECLARE @MiddleName as NVARCHAR(MAX) = 'Kimovich';
+	DECLARE @LastName as NVARCHAR(MAX) = 'Kasparov';
+	DECLARE @PhoneNumberConfirmed as BIT = 1;
+	DECLARE @TwoFactorEnabled as BIT = 0;
+	DECLARE @LockoutEnabled as BIT = 0;
+	DECLARE @AccessFailedCount as INT = 0;
+
+
+	DELETE FROM dbo.Reservation WHERE ID = @ID
+	AND FlightID = @FlightID
+
+	DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+	AND DestinationFrom = @DestinationFrom
+	AND DestinationTo = @DestinationTo
+	AND TakesOff = @TakesOff
+	AND Landing = @Landing
+	AND AirplaneType = @AirplaneType
+	AND PilotName = @PilotName
+	AND Capacity = @Capacity
+	AND BusinessClassCapacity = @BusinessClassCapacity
+
+	DELETE FROM dbo.AspNetUsers WHERE Id = @UserId
+	AND Email = @Email
+	AND EmailConfirmed = @EmailConfirmed
+	AND PasswordHash = @PasswordHash
+	AND PhoneNumber = @PhoneNumber
+	AND Discriminator = @Discriminator
+	AND FirstName = @FirstName
+	AND MiddleName = @MiddleName
+	AND LastName = @LastName
+	AND PhoneNumberConfirmed = @PhoneNumberConfirmed
+	AND TwoFactorEnabled = @TwoFactorEnabled
+	AND LockoutEnabled = @LockoutEnabled
+	AND AccessFailedCount = @AccessFailedCount
+
+
+</value>
+  </data>
+  <data name="IsReservationUpdatedCorrectly_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for dbo.AddReservation
+DECLARE @RC AS INT, @ID AS NVARCHAR (450), @FlightID AS NVARCHAR (450);
+
+SELECT @RC = 0,
+       @ID = '232525562362727',
+       @FlightID = '353163166';
+
+EXECUTE @RC = [dbo].[UpdateReservation] @ID, @FlightID; 
+
+SELECT * FROM dbo.Reservation WHERE ID = @ID
+AND FlightID = @FlightID</value>
+  </data>
+  <data name="IsReservationUpdatedCorrectly_PretestAction.SqlScript" xml:space="preserve">
+    <value>/*
+  adds reservation and adds two flights and user
+*/
+    /* values for reservation */
+	DECLARE @ID AS NVARCHAR(450) = '232525562362727';
+	DECLARE @FlightID AS NVARCHAR(450) = '12521636';
+	/* first values for flight */
+	DECLARE @AirplaneID as NVARCHAR(450) = '12521636';
+	DECLARE @DestinationFrom as NVARCHAR(MAX) =  'Sofia';
+	DECLARE @DestinationTo as NVARCHAR (MAX) = 'Burgas';
+	DECLARE @TakesOff as DATETIME2(7) = '2019-05-25 20:23:00';
+	DECLARE @Landing as DATETIME2(7) = '2019-05-27 15:32:00';
+	DECLARE @AirplaneType as NVARCHAR(MAX) = 'Beautiful';
+	DECLARE @PilotName as NVARCHAR(MAX) = 'Jerry Seinfeld';
+	DECLARE @Capacity as INT = 245;
+	DECLARE @BusinessClassCapacity as INT = 23;
+	/* second values for flight */
+	DECLARE @AirplaneID2 as NVARCHAR(450) = '353163166';
+	DECLARE @DestinationFrom2 as NVARCHAR(MAX) =  'Gabrovo';
+	DECLARE @DestinationTo2 as NVARCHAR (MAX) = 'New York';
+	DECLARE @TakesOff2 as DATETIME2(7) = '2019-05-29 20:12:00';
+	DECLARE @Landing2 as DATETIME2(7) = '2019-06-01 16:45:00';
+	DECLARE @AirplaneType2 as NVARCHAR(MAX) = 'Crazy';
+	DECLARE @PilotName2 as NVARCHAR(MAX) = 'Eric Clapton';
+	DECLARE @Capacity2 as INT = 246;
+	DECLARE @BusinessClassCapacity2 as INT = 12;
+	/* values for aspnetusers */
+	DECLARE @UserId AS NVARCHAR(450) = '232525562362727';
+	DECLARE @Email as NVARCHAR(256) = 'garry@gmail.com';
+	DECLARE @PasswordHash as NVARCHAR(MAX) = '2GOEDS';
+	DECLARE @EmailConfirmed AS BIT = 1;
+	DECLARE @Discriminator as NVARCHAR(MAX) = 'ApplicationUser'
+	DECLARE @PhoneNumber as NVARCHAR(MAX) = '0884351256';
+	DECLARE @FirstName as NVARCHAR(MAX) = 'Garry';
+	DECLARE @MiddleName as NVARCHAR(MAX) = 'Kimovich';
+	DECLARE @LastName as NVARCHAR(MAX) = 'Kasparov';
+	DECLARE @PhoneNumberConfirmed as BIT = 1;
+	DECLARE @TwoFactorEnabled as BIT = 0;
+	DECLARE @LockoutEnabled as BIT = 0;
+	DECLARE @AccessFailedCount as INT = 0;
+
+	DELETE FROM dbo.Reservation WHERE ID = @ID
+	AND FlightID = @FlightID
+
+
+	DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+	AND DestinationFrom = @DestinationFrom
+	AND DestinationTo = @DestinationTo
+	AND TakesOff = @TakesOff
+	AND Landing = @Landing
+	AND AirplaneType = @AirplaneType
+	AND PilotName = @PilotName
+	AND Capacity = @Capacity
+	AND BusinessClassCapacity = @BusinessClassCapacity
+
+	DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID2
+	AND DestinationFrom = @DestinationFrom2
+	AND DestinationTo = @DestinationTo2
+	AND TakesOff = @TakesOff2
+	AND Landing = @Landing2
+	AND AirplaneType = @AirplaneType2
+	AND PilotName = @PilotName2
+	AND Capacity = @Capacity2
+	AND BusinessClassCapacity = @BusinessClassCapacity2
+
+	DELETE FROM dbo.AspNetUsers WHERE Id = @UserId
+	AND Email = @Email
+	AND EmailConfirmed = @EmailConfirmed
+	AND PasswordHash = @PasswordHash
+	AND PhoneNumber = @PhoneNumber
+	AND Discriminator = @Discriminator
+	AND FirstName = @FirstName
+	AND MiddleName = @MiddleName
+	AND LastName = @LastName
+	AND PhoneNumberConfirmed = @PhoneNumberConfirmed
+	AND TwoFactorEnabled = @TwoFactorEnabled
+	AND LockoutEnabled = @LockoutEnabled
+	AND AccessFailedCount = @AccessFailedCount
+
+	INSERT INTO dbo.Flight (AirplaneID, DestinationFrom,
+	DestinationTo, TakesOff, Landing, AirplaneType, PilotName, Capacity,
+	BusinessClassCapacity)
+	VALUES (@AirplaneID, @DestinationFrom,
+	@DestinationTo, @TakesOff, @Landing, @AirplaneType, @PilotName, @Capacity,
+	@BusinessClassCapacity);
+
+	INSERT INTO dbo.Flight (AirplaneID, DestinationFrom,
+	DestinationTo, TakesOff, Landing, AirplaneType, PilotName, Capacity,
+	BusinessClassCapacity)
+	VALUES (@AirplaneID2, @DestinationFrom2,
+	@DestinationTo2, @TakesOff2, @Landing2, @AirplaneType2, @PilotName2, @Capacity2,
+	@BusinessClassCapacity2);
+
+	INSERT INTO dbo.AspNetUsers (Id, Email, EmailConfirmed, PasswordHash, PhoneNumber, PhoneNumberConfirmed,
+	TwoFactorEnabled, Discriminator, FirstName, MiddleName, LastName, LockoutEnabled, AccessFailedCount)
+	VALUES (@UserId, @Email, @EmailConfirmed, @PasswordHash, @PhoneNumber, @PhoneNumberConfirmed,
+	@TwoFactorEnabled, @Discriminator, @FirstName, @MiddleName, @LastName, @LockoutEnabled, @AccessFailedCount)
+
+	INSERT INTO dbo.Reservation (ID, FlightID)
+	VALUES (@ID, @FlightID)
+</value>
+  </data>
+  <data name="IsReservationUpdatedCorrectly_PosttestAction.SqlScript" xml:space="preserve">
+    <value>/*
+  deletes reservation after test is done
+*/
+	DECLARE @ID AS NVARCHAR(450) = '232525562362727';
+	DECLARE @FlightID AS NVARCHAR(450) = '353163166';
+/* values for flight */
+	DECLARE @AirplaneID as NVARCHAR(450) = '12521636';
+	DECLARE @DestinationFrom as NVARCHAR(MAX) =  'Sofia';
+	DECLARE @DestinationTo as NVARCHAR (MAX) = 'Burgas';
+	DECLARE @TakesOff as DATETIME2(7) = '2019-05-25 20:23:00';
+	DECLARE @Landing as DATETIME2(7) = '2019-05-27 15:32:00';
+	DECLARE @AirplaneType as NVARCHAR(MAX) = 'Beautiful';
+	DECLARE @PilotName as NVARCHAR(MAX) = 'Jerry Seinfeld';
+	DECLARE @Capacity as INT = 245;
+	DECLARE @BusinessClassCapacity as INT = 23
+	/* second values for flight */
+	DECLARE @AirplaneID2 as NVARCHAR(450) = '353163166';
+	DECLARE @DestinationFrom2 as NVARCHAR(MAX) =  'Gabrovo';
+	DECLARE @DestinationTo2 as NVARCHAR (MAX) = 'New York';
+	DECLARE @TakesOff2 as DATETIME2(7) = '2019-05-29 20:12:00';
+	DECLARE @Landing2 as DATETIME2(7) = '2019-06-01 16:45:00';
+	DECLARE @AirplaneType2 as NVARCHAR(MAX) = 'Crazy';
+	DECLARE @PilotName2 as NVARCHAR(MAX) = 'Eric Clapton';
+	DECLARE @Capacity2 as INT = 246;
+	DECLARE @BusinessClassCapacity2 as INT = 12;
+	/* values for aspnetusers */
+	DECLARE @UserId AS NVARCHAR(450) = '232525562362727';
+	DECLARE @Email as NVARCHAR(256) = 'garry@gmail.com';
+	DECLARE @PasswordHash as NVARCHAR(MAX) = '2GOEDS';
+	DECLARE @EmailConfirmed AS BIT = 1;
+	DECLARE @Discriminator as NVARCHAR(MAX) = 'ApplicationUser'
+	DECLARE @PhoneNumber as NVARCHAR(MAX) = '0884351256';
+	DECLARE @FirstName as NVARCHAR(MAX) = 'Garry';
+	DECLARE @MiddleName as NVARCHAR(MAX) = 'Kimovich';
+	DECLARE @LastName as NVARCHAR(MAX) = 'Kasparov';
+	DECLARE @PhoneNumberConfirmed as BIT = 1;
+	DECLARE @TwoFactorEnabled as BIT = 0;
+	DECLARE @LockoutEnabled as BIT = 0;
+	DECLARE @AccessFailedCount as INT = 0;
+
+	DELETE FROM dbo.Reservation WHERE ID = @ID
+	AND FlightID = @FlightID
+
+
+	DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+	AND DestinationFrom = @DestinationFrom
+	AND DestinationTo = @DestinationTo
+	AND TakesOff = @TakesOff
+	AND Landing = @Landing
+	AND AirplaneType = @AirplaneType
+	AND PilotName = @PilotName
+	AND Capacity = @Capacity
+	AND BusinessClassCapacity = @BusinessClassCapacity
+
+	DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID2
+	AND DestinationFrom = @DestinationFrom2
+	AND DestinationTo = @DestinationTo2
+	AND TakesOff = @TakesOff2
+	AND Landing = @Landing2
+	AND AirplaneType = @AirplaneType2
+	AND PilotName = @PilotName2
+	AND Capacity = @Capacity2
+	AND BusinessClassCapacity = @BusinessClassCapacity2
+
+	DELETE FROM dbo.AspNetUsers WHERE Id = @UserId
+	AND Email = @Email
+	AND EmailConfirmed = @EmailConfirmed
+	AND PasswordHash = @PasswordHash
+	AND PhoneNumber = @PhoneNumber
+	AND Discriminator = @Discriminator
+	AND FirstName = @FirstName
+	AND MiddleName = @MiddleName
+	AND LastName = @LastName
+	AND PhoneNumberConfirmed = @PhoneNumberConfirmed
+	AND TwoFactorEnabled = @TwoFactorEnabled
+	AND LockoutEnabled = @LockoutEnabled
+	AND AccessFailedCount = @AccessFailedCount
+	</value>
+  </data>
+  <data name="IsReservationDeletedCorrectly_TestAction.SqlScript" xml:space="preserve">
+    <value>DECLARE @RC AS INT, @ID AS NVARCHAR (450), @FlightID AS NVARCHAR (450);
+	/* values for flight */
+	DECLARE @AirplaneID as NVARCHAR(450) = '12521636';
+	DECLARE @DestinationFrom as NVARCHAR(MAX) =  'Sofia';
+	DECLARE @DestinationTo as NVARCHAR (MAX) = 'Burgas';
+	DECLARE @TakesOff as DATETIME2(7) = '2019-05-25 20:23:00';
+	DECLARE @Landing as DATETIME2(7) = '2019-05-27 15:32:00';
+	DECLARE @AirplaneType as NVARCHAR(MAX) = 'Beautiful';
+	DECLARE @PilotName as NVARCHAR(MAX) = 'Jerry Seinfeld';
+	DECLARE @Capacity as INT = 245;
+	DECLARE @BusinessClassCapacity as INT = 23;
+	/* values for aspnetusers */
+	DECLARE @UserId AS NVARCHAR(450) = '232525562362727';
+	DECLARE @Email as NVARCHAR(256) = 'garry@gmail.com';
+	DECLARE @PasswordHash as NVARCHAR(MAX) = '2GOEDS';
+	DECLARE @EmailConfirmed AS BIT = 1;
+	DECLARE @Discriminator as NVARCHAR(MAX) = 'ApplicationUser'
+	DECLARE @PhoneNumber as NVARCHAR(MAX) = '0884351256';
+	DECLARE @FirstName as NVARCHAR(MAX) = 'Garry';
+	DECLARE @MiddleName as NVARCHAR(MAX) = 'Kimovich';
+	DECLARE @LastName as NVARCHAR(MAX) = 'Kasparov';
+	DECLARE @PhoneNumberConfirmed as BIT = 1;
+	DECLARE @TwoFactorEnabled as BIT = 0;
+	DECLARE @LockoutEnabled as BIT = 0;
+	DECLARE @AccessFailedCount as INT = 0;
+
+SELECT @RC = 0,
+       @ID = '232525562362727',
+       @FlightID = '12521636';
+
+
+EXECUTE @RC = [dbo].[DeleteReservation] @ID, @FlightID;
+
+
+
+	DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+	AND DestinationFrom = @DestinationFrom
+	AND DestinationTo = @DestinationTo
+	AND TakesOff = @TakesOff
+	AND Landing = @Landing
+	AND AirplaneType = @AirplaneType
+	AND PilotName = @PilotName
+	AND Capacity = @Capacity
+	AND BusinessClassCapacity = @BusinessClassCapacity
+
+	DELETE FROM dbo.AspNetUsers WHERE Id = @UserId
+	AND Email = @Email
+	AND EmailConfirmed = @EmailConfirmed
+	AND PasswordHash = @PasswordHash
+	AND PhoneNumber = @PhoneNumber
+	AND Discriminator = @Discriminator
+	AND FirstName = @FirstName
+	AND MiddleName = @MiddleName
+	AND LastName = @LastName
+	AND PhoneNumberConfirmed = @PhoneNumberConfirmed
+	AND TwoFactorEnabled = @TwoFactorEnabled
+	AND LockoutEnabled = @LockoutEnabled
+	AND AccessFailedCount = @AccessFailedCount
+
+	SELECT * FROM dbo.Reservation WHERE ID = @ID
+	AND FlightID = @FlightID
+
+
+
+
+</value>
+  </data>
+  <data name="IsReservationDeletedCorrectly_PretestAction.SqlScript" xml:space="preserve">
+    <value>/*
+  deletes reservation if it exists and adds values to flight and user table
+*/
+    /* values for reservation */
+	DECLARE @ID AS NVARCHAR(450) = '232525562362727';
+	DECLARE @FlightID AS NVARCHAR(450) = '12521636';
+	/* values for flight */
+	DECLARE @AirplaneID as NVARCHAR(450) = '12521636';
+	DECLARE @DestinationFrom as NVARCHAR(MAX) =  'Sofia';
+	DECLARE @DestinationTo as NVARCHAR (MAX) = 'Burgas';
+	DECLARE @TakesOff as DATETIME2(7) = '2019-05-25 20:23:00';
+	DECLARE @Landing as DATETIME2(7) = '2019-05-27 15:32:00';
+	DECLARE @AirplaneType as NVARCHAR(MAX) = 'Beautiful';
+	DECLARE @PilotName as NVARCHAR(MAX) = 'Jerry Seinfeld';
+	DECLARE @Capacity as INT = 245;
+	DECLARE @BusinessClassCapacity as INT = 23;
+	/* values for aspnetusers */
+	DECLARE @UserId AS NVARCHAR(450) = '232525562362727';
+	DECLARE @Email as NVARCHAR(256) = 'garry@gmail.com';
+	DECLARE @PasswordHash as NVARCHAR(MAX) = '2GOEDS';
+	DECLARE @EmailConfirmed AS BIT = 1;
+	DECLARE @Discriminator as NVARCHAR(MAX) = 'ApplicationUser'
+	DECLARE @PhoneNumber as NVARCHAR(MAX) = '0884351256';
+	DECLARE @FirstName as NVARCHAR(MAX) = 'Garry';
+	DECLARE @MiddleName as NVARCHAR(MAX) = 'Kimovich';
+	DECLARE @LastName as NVARCHAR(MAX) = 'Kasparov';
+	DECLARE @PhoneNumberConfirmed as BIT = 1;
+	DECLARE @TwoFactorEnabled as BIT = 0;
+	DECLARE @LockoutEnabled as BIT = 0;
+	DECLARE @AccessFailedCount as INT = 0;
+		
+	DELETE FROM dbo.Reservation WHERE ID = @ID
+	AND FlightID = @FlightID
+
+	DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+	AND DestinationFrom = @DestinationFrom
+	AND DestinationTo = @DestinationTo
+	AND TakesOff = @TakesOff
+	AND Landing = @Landing
+	AND AirplaneType = @AirplaneType
+	AND PilotName = @PilotName
+	AND Capacity = @Capacity
+	AND BusinessClassCapacity = @BusinessClassCapacity
+
+	DELETE FROM dbo.AspNetUsers WHERE Id = @UserId
+	AND Email = @Email
+	AND EmailConfirmed = @EmailConfirmed
+	AND PasswordHash = @PasswordHash
+	AND PhoneNumber = @PhoneNumber
+	AND Discriminator = @Discriminator
+	AND FirstName = @FirstName
+	AND MiddleName = @MiddleName
+	AND LastName = @LastName
+	AND PhoneNumberConfirmed = @PhoneNumberConfirmed
+	AND TwoFactorEnabled = @TwoFactorEnabled
+	AND LockoutEnabled = @LockoutEnabled
+	AND AccessFailedCount = @AccessFailedCount
+
+	INSERT INTO dbo.Flight (AirplaneID, DestinationFrom,
+	DestinationTo, TakesOff, Landing, AirplaneType, PilotName, Capacity,
+	BusinessClassCapacity)
+	VALUES (@AirplaneID, @DestinationFrom,
+	@DestinationTo, @TakesOff, @Landing, @AirplaneType, @PilotName, @Capacity,
+	@BusinessClassCapacity)
+
+	INSERT INTO dbo.AspNetUsers (Id, Email, EmailConfirmed, PasswordHash, PhoneNumber, PhoneNumberConfirmed,
+	TwoFactorEnabled, Discriminator, FirstName, MiddleName, LastName, LockoutEnabled, AccessFailedCount)
+	VALUES (@UserId, @Email, @EmailConfirmed, @PasswordHash, @PhoneNumber, @PhoneNumberConfirmed,
+	@TwoFactorEnabled, @Discriminator, @FirstName, @MiddleName, @LastName, @LockoutEnabled, @AccessFailedCount)
+
+	INSERT INTO dbo.Reservation (ID, FlightID)
+	VALUES (@ID, @FlightID)
+</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+</root>

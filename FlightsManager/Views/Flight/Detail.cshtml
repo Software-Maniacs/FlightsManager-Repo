@@ -1,0 +1,42 @@
+﻿@model FlightsManager.Models.Flight.FlightDetailVM
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detail</h1>
+
+<table id="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Nationality</th>
+            <th>PIN</th>
+            <th>Email</th>
+            <th>Telephone Number</th>
+            <th>Ticket Type</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+            @foreach (var passanger in item.Items)
+            {
+                <tr>
+                    <td>@passanger.FirstName</td>
+                    <td>@passanger.MiddleName</td>
+                    <td>@passanger.LastName</td>
+                    <td>@passanger.Nationality</td>
+                    <td>@passanger.PIN</td>
+                    <td>@passanger.Email</td>
+                    <td>@passanger.TelephoneNumber</td>
+                    <td>@passanger.TicketType</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
