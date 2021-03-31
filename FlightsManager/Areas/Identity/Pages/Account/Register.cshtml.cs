@@ -49,22 +49,23 @@ namespace FlightsManager.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            //[Required]
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
+
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }
+
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
 
-            // [Required]
+           // [Required]
             public string UserRole { get; set; }
 
             [Required]
@@ -103,19 +104,12 @@ namespace FlightsManager.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             var role = _roleManager.FindByIdAsync(Input.UserRole).Result;
-
+            
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser
-                {
-                    UserName = Input.UserName,
-                    Email = Input.Email,
-                    PhoneNumber = Input.TelephoneNumber,
-                    FirstName = Input.FirstName,
-                    LastName = Input.LasttName,
-                    Address = Input.Address,
-                    UserPIN = Input.UserPIN
-                };
+                var user = new ApplicationUser { UserName = Input.UserName, Email = Input.Email, 
+                PhoneNumber=Input.TelephoneNumber, FirstName=Input.FirstName, LastName=Input.LasttName,
+                Address=Input.Address,UserPIN=Input.UserPIN};
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
