@@ -9,6 +9,12 @@ namespace FlightsManager.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
+        public ApplicationDbContext()
+        {
+
+        }
+
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -27,17 +33,18 @@ namespace FlightsManager.Data
                 .HasKey(f => new { f.AirplaneID });
 
             modelBuilder.Entity<Reservation>()
-                 .HasKey(rf => new { rf.FlightID, rf.UserId });
+                 .HasKey(r => new { r.ID});
 
             modelBuilder.Entity<Reservation>()
-                 .HasOne(rf => rf.Flight)
-                 .WithMany(r => r.Reservations)
-                 .HasForeignKey(rf => rf.FlightID);
+                 .HasOne(r => r.Flight)
+                 .WithMany(f => f.Reservations)
+                 .HasForeignKey(rf => rf.FlightID)
+                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Reservation>()
-                .HasOne(r => r.ApplicationUser)
-                .WithOne(u => u.Reservation)
-                .HasForeignKey<Reservation>(r => r.UserId);
+                .HasMany(r => r.Passangers)
+                .WithOne(p => p.Reservation)
+                .OnDelete(DeleteBehavior.Cascade);
 
             base.OnModelCreating(modelBuilder);
 
@@ -50,6 +57,11 @@ namespace FlightsManager.Data
             modelBuilder.Ignore<ApplicationUser>();*/
 
             //}
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FlightsMDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
     }
 }

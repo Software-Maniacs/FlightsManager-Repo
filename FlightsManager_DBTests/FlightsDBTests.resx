@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="IsFlightAddedCorrectly_TestAction.SqlScript" xml:space="preserve">
+    <value>-- database unit test for dbo.AddFlight
+DECLARE @RC AS INT, @AirplaneID AS NVARCHAR (450), @DestinationFrom AS NVARCHAR (MAX), @DestinationTo AS NVARCHAR (MAX), @TakesOff AS DATETIME2 (7), @Landing AS DATETIME2 (7), @AirplaneType AS NVARCHAR (MAX), @PilotName AS NVARCHAR (MAX), @Capacity AS INT, @BusinessClassCapacity AS INT;
+
+SELECT @RC = 0,
+       @AirplaneID = '12521636',
+       @DestinationFrom = 'Sofia',
+       @DestinationTo = 'Burgas',
+       @TakesOff = '2019-05-25 20:23:00',
+       @Landing = '2019-05-27 15:32:00',
+       @AirplaneType = 'Beautiful',
+       @PilotName = 'Jerry Seinfeld',
+       @Capacity = 245,
+       @BusinessClassCapacity = 23;
+
+EXECUTE @RC = [dbo].[AddFlight] @AirplaneID, @DestinationFrom, @DestinationTo, @TakesOff, @Landing, @AirplaneType, @PilotName, @Capacity, @BusinessClassCapacity;
+
+SELECT * FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+AND DestinationFrom = @DestinationFrom
+AND DestinationTo = @DestinationTo
+AND TakesOff = @TakesOff
+AND Landing = @Landing
+AND AirplaneType = @AirplaneType
+AND PilotName = @PilotName
+AND Capacity = @Capacity
+AND BusinessClassCapacity = @BusinessClassCapacity
+
+</value>
+  </data>
+  <data name="IsFlightAddedCorrectly_PretestAction.SqlScript" xml:space="preserve">
+    <value>/*
+  delete test flight if it already exists
+*/
+
+DECLARE @ID AS NVARCHAR(450) = '232525562362727';
+DECLARE @FlightID AS NVARCHAR(450) = '12521636';
+
+DECLARE @AirplaneID as NVARCHAR(450) = '12521636';
+DECLARE @DestinationFrom as NVARCHAR(MAX) =  'Sofia';
+DECLARE @DestinationTo as NVARCHAR (MAX) = 'Burgas';
+DECLARE @TakesOff as DATETIME2(7) = '2019-05-25 20:23:00';
+DECLARE @Landing as DATETIME2(7) = '2019-05-27 15:32:00';
+DECLARE @AirplaneType as NVARCHAR(MAX) = 'Beautiful';
+DECLARE @PilotName as NVARCHAR(MAX) = 'Jerry Seinfeld';
+DECLARE @Capacity as INT = 245;
+DECLARE @BusinessClassCapacity as INT = 23
+
+
+DELETE FROM dbo.Reservation WHERE ID = @ID
+AND FlightID = @FlightID
+
+DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+AND DestinationFrom = @DestinationFrom
+AND DestinationTo = @DestinationTo
+AND TakesOff = @TakesOff
+AND Landing = @Landing
+AND AirplaneType = @AirplaneType
+AND PilotName = @PilotName
+AND Capacity = @Capacity
+AND BusinessClassCapacity = @BusinessClassCapacity</value>
+  </data>
+  <data name="IsFlightAddedCorrectly_PosttestAction.SqlScript" xml:space="preserve">
+    <value>/*
+  delete test flight after it's done
+*/
+DECLARE @AirplaneID as NVARCHAR(450) = '12521636';
+DECLARE @DestinationFrom as NVARCHAR(MAX) =  'Sofia';
+DECLARE @DestinationTo as NVARCHAR (MAX) = 'Burgas';
+DECLARE @TakesOff as DATETIME2(7) = '2019-05-25 20:23:00';
+DECLARE @Landing as DATETIME2(7) = '2019-05-27 15:32:00';
+DECLARE @AirplaneType as NVARCHAR(MAX) = 'Beautiful';
+DECLARE @PilotName as NVARCHAR(MAX) = 'Jerry Seinfeld';
+DECLARE @Capacity as INT = 245;
+DECLARE @BusinessClassCapacity as INT = 23
+
+DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+AND DestinationFrom = @DestinationFrom
+AND DestinationTo = @DestinationTo
+AND TakesOff = @TakesOff
+AND Landing = @Landing
+AND AirplaneType = @AirplaneType
+AND PilotName = @PilotName
+AND Capacity = @Capacity
+AND BusinessClassCapacity = @BusinessClassCapacity</value>
+  </data>
+  <data name="IsFlightUpdatedCorrectly_TestAction.SqlScript" xml:space="preserve">
+    <value>DECLARE @RC AS INT, @AirplaneID AS NVARCHAR (450), @PilotName AS NVARCHAR (MAX)
+
+SELECT @RC = 0,
+       @AirplaneID = '12521636',
+       @PilotName = 'Bill Burr';
+
+EXECUTE @RC = [dbo].[UpdateFlight] @AirplaneID, @PilotName;
+
+SELECT * FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+AND PilotName = @PilotName
+
+</value>
+  </data>
+  <data name="IsFlightUpdatedCorrectly_PretestAction.SqlScript" xml:space="preserve">
+    <value>/*
+   adds flight that will be updated
+*/
+
+	DECLARE @ID AS NVARCHAR(450) = '232525562362727';
+	DECLARE @FlightID AS NVARCHAR(450) = '12521636';
+
+	DECLARE @AirplaneID as NVARCHAR(450) = '12521636';
+	DECLARE @DestinationFrom as NVARCHAR(MAX) =  'Sofia';
+	DECLARE @DestinationTo as NVARCHAR (MAX) = 'Burgas';
+	DECLARE @TakesOff as DATETIME2(7) = '2019-05-25 20:23:00';
+	DECLARE @Landing as DATETIME2(7) = '2019-05-27 15:32:00';
+	DECLARE @AirplaneType as NVARCHAR(MAX) = 'Beautiful';
+	DECLARE @PilotName as NVARCHAR(MAX) = 'Jerry Seinfeld';
+	DECLARE @Capacity as INT = 245;
+	DECLARE @BusinessClassCapacity as INT = 23;
+
+	DECLARE @AirplaneID2 as NVARCHAR(450) = '12521636';
+	DECLARE @DestinationFrom2 as NVARCHAR(MAX) =  'Sofia';
+	DECLARE @DestinationTo2 as NVARCHAR (MAX) = 'Burgas';
+	DECLARE @TakesOff2 as DATETIME2(7) = '2019-05-25 20:23:00';
+	DECLARE @Landing2 as DATETIME2(7) = '2019-05-27 15:32:00';
+	DECLARE @AirplaneType2 as NVARCHAR(MAX) = 'Beautiful';
+	DECLARE @PilotName2 as NVARCHAR(MAX) = 'Bill Burr';
+	DECLARE @Capacity2 as INT = 245;
+	DECLARE @BusinessClassCapacity2 as INT = 23;
+
+	DELETE FROM dbo.Reservation WHERE ID = @ID
+	AND FlightID = @FlightID
+
+	DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+	AND DestinationFrom = @DestinationFrom
+	AND DestinationTo = @DestinationTo
+	AND TakesOff = @TakesOff
+	AND Landing = @Landing
+	AND AirplaneType = @AirplaneType
+	AND PilotName = @PilotName
+	AND Capacity = @Capacity
+	AND BusinessClassCapacity = @BusinessClassCapacity
+
+	DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+	AND DestinationFrom = @DestinationFrom
+	AND DestinationTo = @DestinationTo
+	AND TakesOff = @TakesOff
+	AND Landing = @Landing
+	AND AirplaneType = @AirplaneType
+	AND PilotName = @PilotName2
+	AND Capacity = @Capacity
+	AND BusinessClassCapacity = @BusinessClassCapacity
+	
+	INSERT INTO dbo.Flight (AirplaneID, DestinationFrom,
+	DestinationTo, TakesOff, Landing, AirplaneType, PilotName, Capacity,
+	BusinessClassCapacity)
+	VALUES (@AirplaneID, @DestinationFrom,
+	@DestinationTo, @TakesOff, @Landing, @AirplaneType, @PilotName, @Capacity,
+	@BusinessClassCapacity)</value>
+  </data>
+  <data name="IsFlightUpdatedCorrectly_PosttestAction.SqlScript" xml:space="preserve">
+    <value>/*
+  deletes flight after test is done
+*/
+DECLARE @AirplaneID as NVARCHAR(450) = '12521636';
+DECLARE @DestinationFrom as NVARCHAR(MAX) =  'Sofia';
+DECLARE @DestinationTo as NVARCHAR (MAX) = 'Burgas';
+DECLARE @TakesOff as DATETIME2(7) = '2019-05-25 20:23:00';
+DECLARE @Landing as DATETIME2(7) = '2019-05-27 15:32:00';
+DECLARE @AirplaneType as NVARCHAR(MAX) = 'Beautiful';
+DECLARE @PilotName as NVARCHAR(MAX) = 'Bill Burr';
+DECLARE @Capacity as INT = 245;
+DECLARE @BusinessClassCapacity as INT = 23;
+
+DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+AND DestinationFrom = @DestinationFrom
+AND DestinationTo = @DestinationTo
+AND TakesOff = @TakesOff
+AND Landing = @Landing
+AND AirplaneType = @AirplaneType
+AND PilotName = @PilotName
+AND Capacity = @Capacity
+AND BusinessClassCapacity = @BusinessClassCapacity</value>
+  </data>
+  <data name="IsFlightRemovedCorrectly_TestAction.SqlScript" xml:space="preserve">
+    <value>DECLARE @RC AS INT, @AirplaneID AS NVARCHAR (450), @DestinationFrom AS NVARCHAR (MAX), @DestinationTo AS NVARCHAR (MAX), @TakesOff AS DATETIME2 (7), @Landing AS DATETIME2 (7), @AirplaneType AS NVARCHAR (MAX), @PilotName AS NVARCHAR (MAX), @Capacity AS INT, @BusinessClassCapacity AS INT;
+
+SELECT @RC = 0,
+       @AirplaneID = '12521636',
+       @DestinationFrom = 'Sofia',
+       @DestinationTo = 'Burgas',
+       @TakesOff = '2019-05-25 20:23:00',
+       @Landing = '2019-05-27 15:32:00',
+       @AirplaneType = 'Beautiful',
+       @PilotName = 'Jerry Seinfeld',
+       @Capacity = 245,
+       @BusinessClassCapacity = 23;
+
+EXECUTE @RC = [dbo].[RemoveFlight] @AirplaneID, @DestinationFrom, @DestinationTo, @TakesOff, @Landing, @AirplaneType, @PilotName, @Capacity, @BusinessClassCapacity;
+
+SELECT * FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+AND DestinationFrom = @DestinationFrom
+AND DestinationTo = @DestinationTo
+AND TakesOff = @TakesOff
+AND Landing = @Landing
+AND AirplaneType = @AirplaneType
+AND PilotName = @PilotName
+AND Capacity = @Capacity
+AND BusinessClassCapacity = @BusinessClassCapacity</value>
+  </data>
+  <data name="IsFlightRemovedCorrectly_PretestAction.SqlScript" xml:space="preserve">
+    <value>/*
+   adds flight that will be  removed
+*/
+
+	DECLARE @ID AS NVARCHAR(450) = '232525562362727';
+	DECLARE @FlightID AS NVARCHAR(450) = '12521636';
+
+	DECLARE @AirplaneID as NVARCHAR(450) = '12521636';
+	DECLARE @DestinationFrom as NVARCHAR(MAX) =  'Sofia';
+	DECLARE @DestinationTo as NVARCHAR (MAX) = 'Burgas';
+	DECLARE @TakesOff as DATETIME2(7) = '2019-05-25 20:23:00';
+	DECLARE @Landing as DATETIME2(7) = '2019-05-27 15:32:00';
+	DECLARE @AirplaneType as NVARCHAR(MAX) = 'Beautiful';
+	DECLARE @PilotName as NVARCHAR(MAX) = 'Jerry Seinfeld';
+	DECLARE @Capacity as INT = 245;
+	DECLARE @BusinessClassCapacity as INT = 23;
+
+	DELETE FROM dbo.Reservation WHERE ID = @ID
+	AND FlightID = @FlightID
+
+	DELETE FROM dbo.Flight WHERE AirplaneID = @AirplaneID
+	AND DestinationFrom = @DestinationFrom
+	AND DestinationTo = @DestinationTo
+	AND TakesOff = @TakesOff
+	AND Landing = @Landing
+	AND AirplaneType = @AirplaneType
+	AND PilotName = @PilotName
+	AND Capacity = @Capacity
+	AND BusinessClassCapacity = @BusinessClassCapacity
+	
+	INSERT INTO dbo.Flight (AirplaneID, DestinationFrom,
+	DestinationTo, TakesOff, Landing, AirplaneType, PilotName, Capacity,
+	BusinessClassCapacity)
+	VALUES (@AirplaneID, @DestinationFrom,
+	@DestinationTo, @TakesOff, @Landing, @AirplaneType, @PilotName, @Capacity,
+	@BusinessClassCapacity)</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+</root>

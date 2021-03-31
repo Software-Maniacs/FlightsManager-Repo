@@ -1,0 +1,48 @@
+﻿@model FlightsManager.Models.Reservation.ReservationIndexVM
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table id="table">
+    <thead>
+        <tr>
+            <th>Reservation</th>
+            <th>Flight</th>
+            <th>Passanger Count</th>
+            <th>Confirm</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for(int i = 1; i <= Model.Items.Count; i++)
+            {
+        <tr>
+            <td>@i</td>
+            <td>@Model.Items[i - 1].Flight</td>
+            <td>@Model.Items[i - 1].PassangerCount</td>
+            <td>@Model.Items[i - 1].IsConfirm</td>
+            <td>
+                <a asp-action="Detail" asp-route-id="@Model.Items[i - 1].ID">Detail</a>
+                <a asp-action="Delete" asp-route-id="@Model.Items[i - 1].ID">Delete</a>
+            </td>
+        </tr>
+            }
+    </tbody>
+    <ul class="pagination">
+        @for (int i = 1; i <= Model.Pager.PagesCount; i++)
+        {
+            <li class="page-item" @(i == Model.Pager.CurrentPage ? "active" : "")>
+                <a asp-route-Pager.CurrentPage="@i" class="page-link">@i</a>
+            </li>
+        }
+    </ul>
+</table>

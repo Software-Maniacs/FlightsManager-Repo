@@ -18,7 +18,17 @@ namespace FlightsManager.Data
 
         public string Address { get; set; }
 
+        public string Nationality { get; set; }
+
+        public string TicketType { get; set; }
+
+        public string ReservationID { get; set; }
+
         public virtual Reservation Reservation { get; set; }
 
+        public override string ToString()
+        {
+            return $"{this.FirstName} {MiddleName} {LastName} {UserPIN} {Email} {PhoneNumber}";
+        }
     }
 }
