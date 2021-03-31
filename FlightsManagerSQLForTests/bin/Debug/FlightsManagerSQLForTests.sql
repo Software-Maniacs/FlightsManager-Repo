@@ -15,8 +15,8 @@ SET NUMERIC_ROUNDABORT OFF;
 GO
 :setvar DatabaseName "FlightsMDB"
 :setvar DefaultFilePrefix "FlightsMDB"
-:setvar DefaultDataPath "C:\Users\Niki\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances\MSSQLLocalDB\"
-:setvar DefaultLogPath "C:\Users\Niki\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances\MSSQLLocalDB\"
+:setvar DefaultDataPath "C:\Users\Laptop_HP\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances\MSSQLLocalDB\"
+:setvar DefaultLogPath "C:\Users\Laptop_HP\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances\MSSQLLocalDB\"
 
 GO
 :on error exit
@@ -37,6 +37,35 @@ IF N'$(__IsSqlCmdEnabled)' NOT LIKE N'True'
 
 GO
 USE [$(DatabaseName)];
+
+
+GO
+PRINT N'Dropping Foreign Key [dbo].[FK_Reservation_Flight_FlightID]...';
+
+
+GO
+ALTER TABLE [dbo].[Reservation] DROP CONSTRAINT [FK_Reservation_Flight_FlightID];
+
+
+GO
+PRINT N'Creating Foreign Key [dbo].[FK_Reservation_Flight_FlightID]...';
+
+
+GO
+ALTER TABLE [dbo].[Reservation] WITH NOCHECK
+    ADD CONSTRAINT [FK_Reservation_Flight_FlightID] FOREIGN KEY ([FlightID]) REFERENCES [dbo].[Flight] ([AirplaneID]);
+
+
+GO
+PRINT N'Checking existing data against newly created constraints';
+
+
+GO
+USE [$(DatabaseName)];
+
+
+GO
+ALTER TABLE [dbo].[Reservation] WITH CHECK CHECK CONSTRAINT [FK_Reservation_Flight_FlightID];
 
 
 GO

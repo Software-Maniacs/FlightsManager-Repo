@@ -36,9 +36,10 @@ namespace FlightsManager.Data
                  .HasKey(r => new { r.ID});
 
             modelBuilder.Entity<Reservation>()
-                 .HasOne(rf => rf.Flight)
-                 .WithMany(r => r.Reservations)
-                 .HasForeignKey(rf => rf.FlightID);
+                 .HasOne(r => r.Flight)
+                 .WithMany(f => f.Reservations)
+                 .HasForeignKey(rf => rf.FlightID)
+                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Reservation>()
                 .HasMany(r => r.Passangers)

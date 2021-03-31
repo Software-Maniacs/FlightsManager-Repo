@@ -311,7 +311,8 @@ namespace FlightsManager.Migrations
                 {
                     b.HasOne("FlightsManager.Data.Flight", "Flight")
                         .WithMany("Reservations")
-                        .HasForeignKey("FlightID");
+                        .HasForeignKey("FlightID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
