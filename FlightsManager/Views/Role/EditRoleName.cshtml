@@ -1,0 +1,22 @@
+﻿@model FlightsManager.Models.UserRolesViewModel
+
+<h1>Edit Role</h1>
+
+<div class="col-md-4">
+    <form asp-action="EditRoleName" asp-controller="Role" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div> <input asp-for="RoleId" class="d-none" /></div>
+        <div class="form-group">
+            <label asp-for="RoleName"> Role name</label>
+            <input asp-for="RoleName" class="form-control" />
+            <span asp-validation-for="RoleName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Role list</a>
+</div>
