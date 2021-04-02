@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,10 +11,13 @@ namespace FlightsManager.Models.Flight
         private DateTime takeOff = DateTime.Now;
         private DateTime landing = DateTime.Now;
 
+        [Required]
         public string DestinationFrom { get; set; }
 
+        [Required]
         public string DestinationTo { get; set; }
 
+        [Required]
         public DateTime TakesOff 
         {
             get
@@ -26,6 +30,7 @@ namespace FlightsManager.Models.Flight
             }
         }
 
+        [Required]
         public DateTime Landing 
         {
             get
@@ -45,12 +50,18 @@ namespace FlightsManager.Models.Flight
             }
         }
 
+        [Required]
         public string AirplaneType { get; set; }
 
+        [Required]
         public string PilotName { get; set; }
 
+        [Required]
+        [Range(0, int.MaxValue)]
         public int Capacity { get; set; }
 
+        [Required]
+        [Range(0, int.MaxValue)]
         public int BusinessClassCapacity { get; set; }
     }
 }

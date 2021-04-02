@@ -18,7 +18,7 @@
             <th>Destination From</th>
             <th>Destination To</th>
             <th>Take-Off</th>
-            <th>Landing</th>
+            <th>Flight Duration</th>
             <th>Pilot Name</th>
             <th>Capacity</th>
             <th>BusinessClassCapacity</th>
@@ -34,7 +34,7 @@
             <td>@Html.DisplayFor(m => item.DestinationFrom)</td>
             <td>@Html.DisplayFor(m => item.DestinationTo)</td>
             <td>@Html.DisplayFor(m => item.TakesOff)</td>
-            <td>@Html.DisplayFor(m => item.Landing)</td>
+            <td>@Html.DisplayFor(m => item.ContiniusFlight)</td>
             <td>@Html.DisplayFor(m => item.PilotName)</td>
             <td>@Html.DisplayFor(m => item.Capacity)</td>
             <td>@Html.DisplayFor(m => item.BusinessClassCapacity)</td>
@@ -46,13 +46,4 @@
         </tr>
         }
     </tbody>
-
-    <!--<ul class="pagination">
-        @for (int i = 1; i <= Model.Pager.PagesCount; i++)
-        {
-            <li class="page-item" @(i == Model.Pager.CurrentPage ? "active" : "")>
-                <a asp-route-Pager.CurrentPage="@i" class="page-link">@i</a>
-            </li>
-        }
-    </ul>-->
 </table>

@@ -14,5 +14,10 @@ namespace FlightsManager.Models.Reservation
         public int PassangerCount { get; set; }
         public List<Data.Flight> Flights { get; set; }
         public string Flight { get; set; }
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+        public bool IsFirstTime { get; set; }
+        public string Message { get; set; }
     }
 }

@@ -23,10 +23,6 @@ namespace FlightsManager.Controllers
 
         public async Task<IActionResult> Index(FlightIndexVM model)
         {
-            //TODO: Да се подмени кацането на самолета с времето за което продължава полета
-            //TODO: Да се добави списък на резервациите за полета
-            //TODO: Да се промени и изгледа
-
             model.Pager ??= new PagerVM();
             model.Pager.CurrentPage = model.Pager.CurrentPage <= 0 ? 1 : model.Pager.CurrentPage;
 

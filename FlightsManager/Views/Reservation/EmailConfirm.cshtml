@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "EmailConfirm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>EmailConfirm</h1>
+
+<br /><br />
+<div class="alert alert-warning" id="previous">
+    <strong>Confirm Your Reservation</strong>
+    <input type ="submit" class="btn btn-warning" value="Confirm" onclick="Confirm()"/>
+</div>
+<div class="alert alert-success" id="after" style="display: none">
+    <strong><span class="glyphicon glyphicon-ok"></span>Your Reservation Is Confirm Now!</strong>
+</div>
+
+<script>
+    function Confirm() {
+        $.ajax({
+            type: "post",
+            url: "/Reservation/EmailConfirm",
+            data: { "id": "@ViewBag.ID" },
+            success: function (msg) {
+                $("#previous").hide();
+                $("#after").show();
+                alert(msg);
+            }
+        })
+    }
+</script>

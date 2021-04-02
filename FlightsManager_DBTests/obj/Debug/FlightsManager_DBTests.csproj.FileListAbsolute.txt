@@ -129,3 +129,4 @@ C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager_DBTests\obj\Debug\Fl
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager_DBTests\obj\Debug\FlightsManager_DBTests.csproj.CopyComplete
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager_DBTests\obj\Debug\FlightsManager_DBTests.dll
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager_DBTests\obj\Debug\FlightsManager_DBTests.pdb
+D:\FlightsManager-Repo\FlightsManager_DBTests\obj\Debug\FlightsManager_DBTests.csprojAssemblyReference.cache

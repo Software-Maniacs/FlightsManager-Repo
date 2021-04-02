@@ -694,3 +694,7 @@ C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Create.cshtml.g.cs
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Edit.cshtml.g.cs
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Role\EditRoleName.cshtml.g.cs
+D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Create.cshtml.g.cs
+D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Edit.cshtml.g.cs
+D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Reservation\EmailConfirm.cshtml.g.cs
+D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Role\EditRoleName.cshtml.g.cs

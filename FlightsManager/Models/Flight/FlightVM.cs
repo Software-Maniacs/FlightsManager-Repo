@@ -27,5 +27,7 @@ namespace FlightsManager.Models.Flight
         public int BusinessClassCapacity { get; set; }
 
         public virtual ICollection<FlightsManager.Data.Reservation> Reservations { get; set; }
+
+        public TimeSpan ContiniusFlight { get; set; }
     }
 }

@@ -32,17 +32,12 @@
             <td>@Model.Items[i - 1].IsConfirm</td>
             <td>
                 <a asp-action="Detail" asp-route-id="@Model.Items[i - 1].ID">Detail</a>
-                <a asp-action="Delete" asp-route-id="@Model.Items[i - 1].ID">Delete</a>
+                @if (!Model.Items[i - 1].IsConfirm)
+                {
+                    <a asp-action="Delete" asp-route-id="@Model.Items[i - 1].ID">Delete</a>
+                }
             </td>
         </tr>
             }
     </tbody>
-    <ul class="pagination">
-        @for (int i = 1; i <= Model.Pager.PagesCount; i++)
-        {
-            <li class="page-item" @(i == Model.Pager.CurrentPage ? "active" : "")>
-                <a asp-route-Pager.CurrentPage="@i" class="page-link">@i</a>
-            </li>
-        }
-    </ul>
 </table>
