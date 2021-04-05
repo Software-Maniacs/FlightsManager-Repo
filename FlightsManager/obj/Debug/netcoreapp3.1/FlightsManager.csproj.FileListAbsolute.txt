@@ -149,7 +149,6 @@ C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\bin\Debug\netc
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\FlightsManager.csprojAssemblyReference.cache
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\FlightsManager.AssemblyInfoInputs.cache
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\FlightsManager.AssemblyInfo.cs
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\FlightsManager.csproj.CoreCompileInputs.cache
@@ -698,3 +697,7 @@ D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Admin\
 D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Edit.cshtml.g.cs
 D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Reservation\EmailConfirm.cshtml.g.cs
 D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Role\EditRoleName.cshtml.g.cs
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Create.cshtml.g.cs
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Edit.cshtml.g.cs
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Reservation\EmailConfirm.cshtml.g.cs
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Role\EditRoleName.cshtml.g.cs

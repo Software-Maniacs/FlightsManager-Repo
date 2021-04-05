@@ -12,7 +12,7 @@ using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
-
+ 
 namespace FlightsManager.Controllers
 {
     public class ReservationController : Controller

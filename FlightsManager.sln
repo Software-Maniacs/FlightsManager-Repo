@@ -9,6 +9,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FlightsManagerSQLForTests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightsManager_DBTests", "FlightsManager_DBTests\FlightsManager_DBTests.csproj", "{1860E5A9-89EC-49C6-A204-5DDB3DA3D332}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightsManager_Tests", "FlightsManager_Tests\FlightsManager_Tests.csproj", "{AF216976-E71C-411B-93E6-E2C82F8B5081}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{1860E5A9-89EC-49C6-A204-5DDB3DA3D332}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1860E5A9-89EC-49C6-A204-5DDB3DA3D332}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1860E5A9-89EC-49C6-A204-5DDB3DA3D332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF216976-E71C-411B-93E6-E2C82F8B5081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF216976-E71C-411B-93E6-E2C82F8B5081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF216976-E71C-411B-93E6-E2C82F8B5081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF216976-E71C-411B-93E6-E2C82F8B5081}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

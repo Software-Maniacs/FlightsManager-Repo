@@ -41,7 +41,6 @@ C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager_DBTests\bin\De
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager_DBTests\obj\Debug\FlightsManager_DBTests.FlightsDBTests.resources
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager_DBTests\obj\Debug\FlightsManager_DBTests.csproj.GenerateResource.cache
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager_DBTests\obj\Debug\FlightsManager_DBTests.ReservationDBTests.resources
-C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager_DBTests\obj\Debug\FlightsManager_DBTests.csprojAssemblyReference.cache
 D:\FlightsManager-Repo\FlightsManager_DBTests\bin\Debug\FlightsManager_DBTests.dll.config
 D:\FlightsManager-Repo\FlightsManager_DBTests\bin\Debug\FlightsManager_DBTests.dll
 D:\FlightsManager-Repo\FlightsManager_DBTests\bin\Debug\FlightsManager_DBTests.pdb
