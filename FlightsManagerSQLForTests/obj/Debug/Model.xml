@@ -2350,9 +2350,10 @@
 						<Relationship Name="Type">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="450" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[int]" />
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -2383,10 +2384,10 @@
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="176" />
+				<Property Name="Length" Value="186" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[UpdateFlight]&#xD;&#xA;&#x9;@AirplaneID as INT,&#xD;&#xA;&#x9;@PilotName as NVARCHAR (MAX)&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[UpdateFlight]&#xD;&#xA;&#x9;@AirplaneID as NVARCHAR(450),&#xD;&#xA;&#x9;@PilotName as NVARCHAR (MAX)&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[UpdateReservation]">

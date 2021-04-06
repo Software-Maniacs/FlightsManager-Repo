@@ -701,3 +701,4 @@ C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netc
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Edit.cshtml.g.cs
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Reservation\EmailConfirm.cshtml.g.cs
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Role\EditRoleName.cshtml.g.cs
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\FlightsManager.csprojAssemblyReference.cache

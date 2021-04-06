@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[UpdateFlight]
-	@AirplaneID as INT,
+	@AirplaneID as NVARCHAR(450),
 	@PilotName as NVARCHAR (MAX)
 AS
 	UPDATE dbo.Flight

@@ -241,4 +241,3 @@ C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager_Tests\obj\Debu
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager_Tests\obj\Debug\netcoreapp3.1\FlightsManager_Tests.dll
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager_Tests\obj\Debug\netcoreapp3.1\FlightsManager_Tests.pdb
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager_Tests\obj\Debug\netcoreapp3.1\FlightsManager_Tests.genruntimeconfig.cache
-C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager_Tests\bin\Debug\netcoreapp3.1\FlightsManager.StaticWebAssets.xml

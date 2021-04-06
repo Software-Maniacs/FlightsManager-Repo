@@ -21,7 +21,6 @@ namespace FlightsManager_Tests.ControllerTests
     {
         private ReservationIndexVM _reservationIndex;
         private ReservationController _controller;
-        private ReservationCreateVM _reservationCreate;
         private PassangerCountVM _passangerCount;
         private ApplicationDbContext _db;
         
@@ -68,43 +67,84 @@ namespace FlightsManager_Tests.ControllerTests
         }
 
         [Test]
-        public void Create_PassangerCountVMMethod_ReturnsView()
+        public void Create_PassangerCountVMMethod_ReturnsIndex()
         {
             _passangerCount = new PassangerCountVM
             {
                 PassangerCount = 56
             };
             var result = _controller.Create(_passangerCount);
-            Assert.IsInstanceOf<Task<ViewResult>>(result, "Returned result in Create is not of ViewResult type.");
+            Assert.IsInstanceOf<Task<IActionResult>>(result, "Returned result in Create is not of Task<IActionResult> type.");
         }
 
         [Test]
-        public void Create_ViewState_Is_Valid_Returns_RedirectToActionResult()
+        public void Create_ViewState_Is_Valid_Returns_CorrectAction()
         {
-            _passangerCount = new PassangerCountVM { PassangerCount = 6 };
+            ReservationVM[] reservations = new ReservationVM[1];
+            List<ReservationVM> temp = new List<ReservationVM>
+            {
+                new ReservationVM
+                {
+                    Flight = "23251gea",
+                    FirstName = "Andrea",
+                    MiddleName = "Laino",
+                    LastName = "Barogd",
+                    Nationality = "Bulgarian",
+                    PIN = "02512",
+                    TelephoneNumber = "0885215643",
+                    TicketType = "Ordinary",
+                    Email = "andrea@gmail.com"
+                }
+            };
+            reservations = temp.ToArray();
+
             ReservationCreateVM _reservationCreate = new ReservationCreateVM
             {
+                Email = "garry@abv.bg",
+                IsFirstTime = true,
+                Message = "I want to be a cockstar.",
                 Flights = this._db.Flight.ToList(),
-                PassangerCount = _passangerCount.PassangerCount,
-                Reservations = new ReservationVM[_passangerCount.PassangerCount]
+                Flight = "25152",
+                PassangerCount = 1,
+                Reservations = reservations
             };
             var result = _controller.Create(_reservationCreate);
 
-            Assert.IsInstanceOf<Task<RedirectToActionResult>>(result, "Returned result in Create(ReservationCreateVM method) is not of type Task<RedirectToActionResult>.");
+            Assert.IsInstanceOf<Task<IActionResult>>(result, "Returned result in Create(ReservationCreateVM method) is not of type Task<IActionResult>.");
         }
         [Test]
-        public void Create_ViewState_Isnt_Valid_Returns_ViewResult()
+        public void Create_ViewState_Isnt_Valid_Returns_CorrectAction()
         {
-            _passangerCount = new PassangerCountVM { PassangerCount = 6 };
+            ReservationVM[] reservations = new ReservationVM[1];
+            List<ReservationVM> temp = new List<ReservationVM>
+            {
+                new ReservationVM
+                {
+                    Flight = "23251gea",
+                    FirstName = "Andrea",
+                    MiddleName = "Laino",
+                    LastName = "Barogd",
+                    Nationality = "Bulgarian",
+                    PIN = "02512",
+                    TelephoneNumber = "0885215643",
+                    TicketType = "Ordinary",
+                    Email = "andrea@gmail.com"
+                }
+            };
+            reservations = temp.ToArray();
             ReservationCreateVM _reservationCreate = new ReservationCreateVM
             {
-                Reservations = new ReservationVM[_passangerCount.PassangerCount],
-                PassangerCount = 6
+                IsFirstTime = true,
+                Message = "I want to be a cockstar.",
+                Flights = this._db.Flight.ToList(),
+                Flight = "25152",
+                PassangerCount = 1,
+                Reservations = reservations
             };
-            _controller.ModelState.AddModelError("Flights", "Flights mustn't be null.");
+            _controller.ModelState.AddModelError("Email", "Email mustn't be null.");
             var result = _controller.Create(_reservationCreate);
 
-            Assert.IsInstanceOf<Task<ViewResult>>(result, "Returned result in Create(ReservationCreateVM method) is not of type Task<ViewResult>.");
+            Assert.IsInstanceOf<Task<IActionResult>>(result, "Returned result in Create(ReservationCreateVM method) is not of type Task<IActionResult>.");
         }
         [Test]
         public void Detail_Returns_ViewResult()
@@ -114,11 +154,11 @@ namespace FlightsManager_Tests.ControllerTests
             Assert.IsInstanceOf<ViewResult>(result, "Returned result in Detail is not of ViewResult type.");
         }
         [Test]
-        public void Delete_Returns_RedirectToAction()
+        public void Delete_Returns_CorrectAction()
         {
             string id = "315abdsg23";
             var result = _controller.DeleteAsync(id);
-            Assert.IsInstanceOf<Task<RedirectToActionResult>>(result, "Returned result in Detail is not of RedirectToAction type.");
+            Assert.IsInstanceOf<Task<IActionResult>>(result, "Returned result in Detail is not of Task<IActionResult> type.");
         }
         [Test]
         public void Confirm_Returns_View()
