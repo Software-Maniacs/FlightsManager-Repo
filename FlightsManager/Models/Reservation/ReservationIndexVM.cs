@@ -7,9 +7,18 @@ using System.Threading.Tasks;
 
 namespace FlightsManager.Models.Reservation
 {
+    /// <summary>
+    /// Viewmodel for the Index Reservation page.
+    /// </summary>
     public class ReservationIndexVM
     {
+        /// <summary>
+        /// Pager for the Reservation page.
+        /// </summary>
         public PagerVM Pager { get; set; }
+        /// <summary>
+        /// Collection of all reservations.
+        /// </summary>
         public List<ReservationIndexDetailVM> Items { get; set; }
     }
 }

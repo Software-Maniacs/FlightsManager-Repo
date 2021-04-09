@@ -11,16 +11,30 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FlightsManager.Controllers
 {
+    /// <summary>
+    /// The controller for all flights.
+    /// </summary>
     public class FlightController : Controller
     {
         private readonly ApplicationDbContext db;
         private const int PageSize = 10;
 
+        /// <summary>
+        /// The default constructor of the controller.
+        /// </summary>
+        /// <remarks>
+        /// When initiated, the controller connects to the database.
+        /// </remarks>
         public FlightController()
         {
             this.db = new ApplicationDbContext();
         }
 
+        /// <summary>
+        /// The Index method.
+        /// </summary>
+        /// <param name="model">The Index view.</param>
+        /// <returns>A view of all flights.</returns>
         public async Task<IActionResult> Index(FlightIndexVM model)
         {
             model.Pager ??= new PagerVM();
@@ -49,6 +63,10 @@ namespace FlightsManager.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Method that returns a view where a flight can be created.
+        /// </summary>
+        /// <returns>The said view.</returns>
         [HttpGet]
         public IActionResult Create()
         {
@@ -57,6 +75,11 @@ namespace FlightsManager.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Method through which a flight is created.
+        /// </summary>
+        /// <param name="model">The view where the info is stored.</param>
+        /// <returns>If the info is valid, the method redirects to Index. If not, it returns to the same view.</returns>
         [HttpPost]
         public async Task<IActionResult> Create(FlightCreateVM model)
         {
@@ -87,6 +110,11 @@ namespace FlightsManager.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Method that returns the view where a flight can be edited through.
+        /// </summary>
+        /// <param name="id">The ID of the requested flight.</param>
+        /// <returns>If successful, the method returns the view. If the id is not correct or if the flight is not found - a NotFound result.</returns>
         [HttpGet]
         public async Task<IActionResult> Edit(string? id)
         {
@@ -119,6 +147,11 @@ namespace FlightsManager.Controllers
             return View(flight);
         }
 
+        /// <summary>
+        /// Method that edits a flight.
+        /// </summary>
+        /// <param name="model">The view containing the new info.</param>
+        /// <returns>If successful, the method redirects back to Index. If the info isn't valid, it returns back the view. If the flight is not found - a NotFound result.</returns>
         [HttpPost]
         public async Task<IActionResult> Edit(FlightEditVM model)
         {
@@ -161,6 +194,11 @@ namespace FlightsManager.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Method that returns a view of all the flight's reservations.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>The said view.</returns>
         public IActionResult Detail(string? id)
         {
             List<Reservation> reservations = db.Reservation
@@ -199,6 +237,11 @@ namespace FlightsManager.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Method through which a flight is deleted.
+        /// </summary>
+        /// <param name="id">The ID of the requested flight.</param>
+        /// <returns>Redirects back to Index.</returns>
         public async Task<IActionResult> Delete(string? id)
         {
             Flight flight = await db.Flight.FindAsync(id);

@@ -3,8 +3,14 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FlightsManager.Migrations
 {
+    /// <summary>
+    /// The first migration that was created for the database.
+    /// </summary>
     public partial class Initial : Migration
     {
+        /// <summary>
+        /// Method that will be used when the migration is being applied.
+        /// </summary>
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -254,6 +260,9 @@ namespace FlightsManager.Migrations
                 column: "FlightID");
         }
 
+        /// <summary>
+        /// Method that will be used when the migration is being removed.
+        /// </summary>
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

@@ -15,16 +15,30 @@ using System.Threading.Tasks;
  
 namespace FlightsManager.Controllers
 {
+    /// <summary>
+    /// The controller for all reservations.
+    /// </summary>
     public class ReservationController : Controller
     {
         private readonly ApplicationDbContext db;
         private const int PageSize = 5;
 
+        /// <summary>
+        /// The default constructor for the controller.
+        /// </summary>
+        /// <remarks>
+        /// When initiated, the controller connects to the database.
+        /// </remarks>
         public ReservationController()
         {
             this.db = new ApplicationDbContext();
         }
 
+        /// <summary>
+        /// Method that returns the Index page.
+        /// </summary>
+        /// <param name="model">The view of Index.</param>
+        /// <returns>Index with all reservations.</returns>
         public IActionResult Index(ReservationIndexVM model)
         {
             model.Pager ??= new PagerVM();
@@ -60,6 +74,10 @@ namespace FlightsManager.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Method that returns the view of the passenger count.
+        /// </summary>
+        /// <returns>The said view.</returns>
         [HttpGet]
         public IActionResult PassangerCount()
         {
@@ -68,6 +86,11 @@ namespace FlightsManager.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Method through which the passenger count is passed on to the Create method.
+        /// </summary>
+        /// <param name="model">The view containing the passenger count.</param>
+        /// <returns>If the count is valid, the method redirects to the Create view. If not, it returns back the same view.</returns>
         [HttpPost]
         public IActionResult PassangerCount(PassangerCountVM model)
         {
@@ -78,6 +101,11 @@ namespace FlightsManager.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Method that returns the view through which a reservation is created.
+        /// </summary>
+        /// <param name="passangerCountVM">The view of the passenger count from the earlier method.</param>
+        /// <returns>A view through which the reservation can be created.</returns>
         [HttpGet]
         public async Task<IActionResult> Create(PassangerCountVM passangerCountVM)
         {
@@ -91,6 +119,11 @@ namespace FlightsManager.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Method that creates a reservation.
+        /// </summary>
+        /// <param name="model">The view that contains all the needed info for the process.</param>
+        /// <returns>If successful, the method redirects back to Index. If not - it returns the same view.</returns>
         [HttpPost]
         public async Task<IActionResult> Create(ReservationCreateVM model)
         {
@@ -182,6 +215,11 @@ namespace FlightsManager.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Method that returns a view of the details of the reservation.
+        /// </summary>
+        /// <param name="id">The ID of the reservation.</param>
+        /// <returns>The view of said reservation details.</returns>
         public IActionResult Detail(string? id)
         {
             ReservationDetailVM model = new ReservationDetailVM()
@@ -204,6 +242,11 @@ namespace FlightsManager.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Method that deletes a reservation.
+        /// </summary>
+        /// <param name="id">The ID of the requested reservation.</param>
+        /// <returns>Redirects back to Index.</returns>
         public async Task<IActionResult> DeleteAsync(string? id)
         {
             List<ApplicationUser> list = db.ApplicationUser
@@ -230,6 +273,13 @@ namespace FlightsManager.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        /// <summary>
+        /// Method that builds the template for the email.
+        /// </summary>
+        /// <param name="reservationID">ID of the reservation.</param>
+        /// <remarks>
+        /// The said email is the confirmation email that will be sent to the user.
+        /// </remarks>
         public void BuildEmailTemplate(string reservationID)
         {
             List<ApplicationUser> list = db.ApplicationUser.Where(u => u.ReservationID == reservationID).ToList();
@@ -258,6 +308,12 @@ namespace FlightsManager.Controllers
             BuildEmailTemplate("Your Reservation Is Successfully Confirm", body, list[0].Email);
         }
 
+        /// <summary>
+        /// Method that prepares the email itself.
+        /// </summary>
+        /// <param name="subjectText">The subject of the email.</param>
+        /// <param name="bodyText">The body of the email.</param>
+        /// <param name="emailTo">The target email.</param>
         public static void BuildEmailTemplate(string subjectText, string bodyText, string emailTo)
         {
             string from, to, bcc, cc, subject, body;
@@ -288,6 +344,10 @@ namespace FlightsManager.Controllers
             SendEmail(mail);
         }
 
+        /// <summary>
+        /// Method that sends the confirmation email.
+        /// </summary>
+        /// <param name="mail">The already made email in the secondBuildEmailTemplate method.</param>
         public static void SendEmail(MailMessage mail)
         {
             SmtpClient client = new SmtpClient();
@@ -328,7 +388,7 @@ namespace FlightsManager.Controllers
 
             db.SaveChangesAsync();
 
-            string msg = "Your Reservation Is Confirm!";
+            string msg = "Your Reservation Is Confirmed!";
             return Json(msg);
         }
     }

@@ -6,17 +6,29 @@ using System.Threading.Tasks;
 
 namespace FlightsManager.Models.Flight
 {
+    /// <summary>
+    /// The viewmodel through which a flight is created.
+    /// </summary>
     public class FlightCreateVM
     {
         private DateTime takeOff = DateTime.Now;
         private DateTime landing = DateTime.Now;
 
+        /// <summary>
+        /// The city from which the airplane takes off.
+        /// </summary>
         [Required]
         public string DestinationFrom { get; set; }
 
+        /// <summary>
+        /// The city where the airplane has to land.
+        /// </summary>
         [Required]
         public string DestinationTo { get; set; }
 
+        /// <summary>
+        /// The time when the plane is supposed to take off.
+        /// </summary>
         [Required]
         public DateTime TakesOff 
         {
@@ -30,6 +42,9 @@ namespace FlightsManager.Models.Flight
             }
         }
 
+        /// <summary>
+        /// The time when the plane is supposed to land.
+        /// </summary>
         [Required]
         public DateTime Landing 
         {
@@ -50,16 +65,29 @@ namespace FlightsManager.Models.Flight
             }
         }
 
+
+        /// <summary>
+        /// The type of the airplane.
+        /// </summary>
         [Required]
         public string AirplaneType { get; set; }
 
+        /// <summary>
+        /// The name of the main pilot of this flight.
+        /// </summary>
         [Required]
         public string PilotName { get; set; }
 
+        /// <summary>
+        /// The capacity of passengers the plane holds.
+        /// </summary>
         [Required]
         [Range(0, int.MaxValue)]
         public int Capacity { get; set; }
 
+        /// <summary>
+        /// The number of business class seats.
+        /// </summary>
         [Required]
         [Range(0, int.MaxValue)]
         public int BusinessClassCapacity { get; set; }
