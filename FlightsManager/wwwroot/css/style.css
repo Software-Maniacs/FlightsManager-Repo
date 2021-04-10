@@ -2126,6 +2126,7 @@ input[type="radio"] .styled:checked+label::after {
 label {
      float: left;
      margin-bottom: 5px;
+     text-align: center;
 }
 .footer {
      background-color: #022739;
