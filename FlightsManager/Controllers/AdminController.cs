@@ -45,6 +45,10 @@ namespace FlightsManager.Controllers
             return View(getAllUsersViewModel);
         }
 
+        public ActionResult Dashboard()
+        {
+            return View();
+        }
         private async Task<List<string>> GetUserRoles(ApplicationUser user)
         {
             return new List<string>(await _userManager.GetRolesAsync(user));

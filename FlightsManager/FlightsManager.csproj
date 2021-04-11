@@ -22,4 +22,73 @@
     <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\theme\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\admin-theme\dist\assets\demo\chart-area-demo.js" />
+    <None Include="wwwroot\admin-theme\dist\assets\demo\chart-bar-demo.js" />
+    <None Include="wwwroot\admin-theme\dist\assets\demo\chart-pie-demo.js" />
+    <None Include="wwwroot\admin-theme\dist\assets\demo\datatables-demo.js" />
+    <None Include="wwwroot\admin-theme\dist\assets\img\error-404-monochrome.svg" />
+    <None Include="wwwroot\admin-theme\dist\js\scripts.js" />
+    <None Include="wwwroot\admin-theme\scripts\build-assets.js" />
+    <None Include="wwwroot\admin-theme\scripts\build-pug.js" />
+    <None Include="wwwroot\admin-theme\scripts\build-scripts.js" />
+    <None Include="wwwroot\admin-theme\scripts\build-scss.js" />
+    <None Include="wwwroot\admin-theme\scripts\clean.js" />
+    <None Include="wwwroot\admin-theme\scripts\render-assets.js" />
+    <None Include="wwwroot\admin-theme\scripts\render-pug.js" />
+    <None Include="wwwroot\admin-theme\scripts\render-scripts.js" />
+    <None Include="wwwroot\admin-theme\scripts\render-scss.js" />
+    <None Include="wwwroot\admin-theme\scripts\sb-watch.js" />
+    <None Include="wwwroot\admin-theme\scripts\start-debug.js" />
+    <None Include="wwwroot\admin-theme\scripts\start.js" />
+    <None Include="wwwroot\admin-theme\src\assets\demo\chart-area-demo.js" />
+    <None Include="wwwroot\admin-theme\src\assets\demo\chart-bar-demo.js" />
+    <None Include="wwwroot\admin-theme\src\assets\demo\chart-pie-demo.js" />
+    <None Include="wwwroot\admin-theme\src\assets\demo\datatables-demo.js" />
+    <None Include="wwwroot\admin-theme\src\assets\img\error-404-monochrome.svg" />
+    <None Include="wwwroot\admin-theme\src\js\scripts.js" />
+    <None Include="wwwroot\admin-theme\src\pug\layouts\authentication.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\layouts\dashboard.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\layouts\error.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\layouts\includes\footer.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\layouts\includes\head\css.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\layouts\includes\head\icons.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\layouts\includes\head\meta.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\layouts\includes\head\title.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\layouts\includes\navigation\sidenav.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\layouts\includes\navigation\topnav.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\layouts\includes\scripts.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\pages\401.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\pages\404.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\pages\500.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\pages\charts.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\pages\includes\datatable.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\pages\includes\page-header.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\pages\index.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\pages\layout-sidenav-light.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\pages\layout-static.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\pages\login.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\pages\password.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\pages\register.pug" />
+    <None Include="wwwroot\admin-theme\src\pug\pages\tables.pug" />
+    <None Include="wwwroot\admin-theme\src\scss\layout\_authentication.scss" />
+    <None Include="wwwroot\admin-theme\src\scss\layout\_dashboard-default.scss" />
+    <None Include="wwwroot\admin-theme\src\scss\layout\_dashboard-fixed.scss" />
+    <None Include="wwwroot\admin-theme\src\scss\layout\_error.scss" />
+    <None Include="wwwroot\admin-theme\src\scss\navigation\sidenav\_sidenav-dark.scss" />
+    <None Include="wwwroot\admin-theme\src\scss\navigation\sidenav\_sidenav-light.scss" />
+    <None Include="wwwroot\admin-theme\src\scss\navigation\sidenav\_sidenav.scss" />
+    <None Include="wwwroot\admin-theme\src\scss\navigation\_nav.scss" />
+    <None Include="wwwroot\admin-theme\src\scss\navigation\_topnav.scss" />
+    <None Include="wwwroot\admin-theme\src\scss\styles.scss" />
+    <None Include="wwwroot\admin-theme\src\scss\variables\_navigation.scss" />
+    <None Include="wwwroot\admin-theme\src\scss\variables\_spacing.scss" />
+    <None Include="wwwroot\admin-theme\src\scss\_global.scss" />
+    <None Include="wwwroot\admin-theme\src\scss\_variables.scss" />
+  </ItemGroup>
+
 </Project>
