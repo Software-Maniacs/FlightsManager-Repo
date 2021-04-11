@@ -11,7 +11,7 @@
     <a asp-action="Create">Create New</a>
 </p>
 
-<table id="table">
+<table id="table" class="table table-striped">
     <thead>
         <tr>
             <th>Airplane Type</th>
@@ -23,27 +23,30 @@
             <th>Capacity</th>
             <th>BusinessClassCapacity</th>
             <th></th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
 
     <tbody>
         @foreach (var item in Model.Items)
         {
-        <tr>
-            <td>@Html.DisplayFor(m => item.AirplaneType)</td>
-            <td>@Html.DisplayFor(m => item.DestinationFrom)</td>
-            <td>@Html.DisplayFor(m => item.DestinationTo)</td>
-            <td>@Html.DisplayFor(m => item.TakesOff)</td>
-            <td>@Html.DisplayFor(m => item.ContiniusFlight)</td>
-            <td>@Html.DisplayFor(m => item.PilotName)</td>
-            <td>@Html.DisplayFor(m => item.Capacity)</td>
-            <td>@Html.DisplayFor(m => item.BusinessClassCapacity)</td>
-            <td>
-                <a asp-action="Detail" asp-route-id="@item.AirplaneID">Detail</a>
-                <a asp-action="Edit" asp-route-id="@item.AirplaneID">Edit</a>
-                <a asp-action="Delete" asp-route-id="@item.AirplaneID">Delete</a>
-            </td>
-        </tr>
+            <tr>
+                <td>@Html.DisplayFor(m => item.AirplaneType)</td>
+                <td>@Html.DisplayFor(m => item.DestinationFrom)</td>
+                <td>@Html.DisplayFor(m => item.DestinationTo)</td>
+                <td>@Html.DisplayFor(m => item.TakesOff)</td>
+                <td>@Html.DisplayFor(m => item.ContiniusFlight)</td>
+                <td>@Html.DisplayFor(m => item.PilotName)</td>
+                <td>@Html.DisplayFor(m => item.Capacity)</td>
+                <td>@Html.DisplayFor(m => item.BusinessClassCapacity)</td>
+                <td><a asp-action="Detail" asp-route-id="@item.AirplaneID" class="btn btn-success">Detail</a></td>
+                @if (User.IsInRole("Admin"))
+                {
+                    <td><a asp-action="Edit" asp-route-id="@item.AirplaneID" class="btn btn-primary">Edit</a></td>
+                    <td><a asp-action="Delete" asp-route-id="@item.AirplaneID" class="btn btn-danger">Delete</a></td>
+                }
+            </tr>
         }
     </tbody>
 </table>
