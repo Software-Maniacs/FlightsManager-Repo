@@ -45,7 +45,8 @@ namespace FlightsManager.Controllers
         /// <returns>A view containing all users.</returns>
         public async Task<IActionResult> Index()
         {
-            var users = await _userManager.Users.ToListAsync();
+            var users = await _userManager.Users.Where(u => u.ReservationID == null).ToListAsync();
+
             var getAllUsersViewModel = new List<GetAllUsersViewModel>();
 
             foreach (ApplicationUser user in users)

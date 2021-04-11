@@ -2,6 +2,7 @@
 using FlightsManager.Models.Base;
 using FlightsManager.Models.Flight;
 using FlightsManager.Models.Reservation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting.Internal;
@@ -39,6 +40,7 @@ namespace FlightsManager.Controllers
         /// </summary>
         /// <param name="model">The view of Index.</param>
         /// <returns>Index with all reservations.</returns>
+        [Authorize(Roles = "Admin, Employee")]
         public IActionResult Index(ReservationIndexVM model)
         {
             model.Pager ??= new PagerVM();
@@ -220,6 +222,7 @@ namespace FlightsManager.Controllers
         /// </summary>
         /// <param name="id">The ID of the reservation.</param>
         /// <returns>The view of said reservation details.</returns>
+        [Authorize(Roles = "Admin, Employee")]
         public IActionResult Detail(string? id)
         {
             ReservationDetailVM model = new ReservationDetailVM()
@@ -247,6 +250,7 @@ namespace FlightsManager.Controllers
         /// </summary>
         /// <param name="id">The ID of the requested reservation.</param>
         /// <returns>Redirects back to Index.</returns>
+        [Authorize(Roles = "Admin, Employee")]
         public async Task<IActionResult> DeleteAsync(string? id)
         {
             List<ApplicationUser> list = db.ApplicationUser

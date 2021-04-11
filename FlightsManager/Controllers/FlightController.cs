@@ -6,6 +6,7 @@ using FlightsManager.Data;
 using FlightsManager.Models.Base;
 using FlightsManager.Models.Flight;
 using FlightsManager.Models.Reservation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +15,7 @@ namespace FlightsManager.Controllers
     /// <summary>
     /// The controller for all flights.
     /// </summary>
+    [Authorize(Roles = "Employee, Admin")]
     public class FlightController : Controller
     {
         private readonly ApplicationDbContext db;
@@ -67,6 +69,7 @@ namespace FlightsManager.Controllers
         /// Method that returns a view where a flight can be created.
         /// </summary>
         /// <returns>The said view.</returns>
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Create()
         {
@@ -115,6 +118,7 @@ namespace FlightsManager.Controllers
         /// </summary>
         /// <param name="id">The ID of the requested flight.</param>
         /// <returns>If successful, the method returns the view. If the id is not correct or if the flight is not found - a NotFound result.</returns>
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Edit(string? id)
         {
@@ -242,6 +246,7 @@ namespace FlightsManager.Controllers
         /// </summary>
         /// <param name="id">The ID of the requested flight.</param>
         /// <returns>Redirects back to Index.</returns>
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(string? id)
         {
             Flight flight = await db.Flight.FindAsync(id);
