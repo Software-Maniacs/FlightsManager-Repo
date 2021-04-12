@@ -4,5 +4,991 @@
         <name>FlightsManager</name>
     </assembly>
     <members>
+        <member name="T:FlightsManager.Controllers.AdminController">
+            <summary>
+            The controller for the admin role.
+            </summary>
+        </member>
+        <member name="M:FlightsManager.Controllers.AdminController.#ctor(Microsoft.AspNetCore.Identity.UserManager{FlightsManager.Data.ApplicationUser},Microsoft.AspNetCore.Identity.RoleManager{Microsoft.AspNetCore.Identity.IdentityRole},Microsoft.AspNetCore.Identity.IPasswordHasher{FlightsManager.Data.ApplicationUser},FlightsManager.Data.ApplicationDbContext)">
+            <summary>
+            The default controller.
+            </summary>
+            <param name="userManager">Provides the APIs for managing user in a persistence store.</param>
+            <param name="roleManager">Provides the APIs for managing roles in a persistence store.</param>
+            <param name="passwordHasher">Provides an abstraction for storing passwords.</param>
+            <param name="dbContext">The database context.</param>
+        </member>
+        <member name="M:FlightsManager.Controllers.AdminController.Index">
+            <summary>
+            The Index method for AdminController.
+            </summary>
+            <returns>A view containing all users.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.AdminController.CreateUser">
+            <summary>
+            Method that returns a view where the user can be created.
+            </summary>
+            <returns>A view where the user will be created.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.AdminController.Create(FlightsManager.Models.UserViewModels.CreateUserViewModel)">
+            <summary>
+            Method that creates an user.
+            </summary>
+            <param name="createUser">The user's information that will be passed to the database.</param>
+            <returns>In case of success, the method redirects back to Index.
+            Otherwise, it returns the same view.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.AdminController.Edit(System.String)">
+            <summary>
+            Method that returns the view where the edits of an user can be requested.
+            </summary>
+            <param name="id">The ID of the requested user.</param>
+            <returns>In the case where the user is found, the view is returned. Otherwise, a NotFound result. </returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.AdminController.Edit(FlightsManager.Models.UserViewModels.EditUserViewModel)">
+            <summary>
+            Method through which an user can be edited.
+            </summary>
+            <param name="userViewModel">The view where the edits are stored.</param>
+            <returns>If successful, the method redirects back to Index. If not, it returns back the view. If the user is not found at all - a NotFound result.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.AdminController.Delete(System.String)">
+            <summary>
+            Method through which an user can be deleted.
+            </summary>
+            <param name="id">The ID of the requested user.</param>
+            <returns>If successful, the method redirects to Index. Otherwise, a NotFound result.
+            If the user doesn't exist, it redirects to Index again.</returns>
+        </member>
+        <member name="T:FlightsManager.Controllers.EmployeeController">
+            <summary>
+            The controller for all employees.
+            </summary>
+        </member>
+        <member name="M:FlightsManager.Controllers.EmployeeController.Index">
+            <summary>
+            The Index method for the controller.
+            </summary>
+            <returns>A view of Index.</returns>
+        </member>
+        <member name="T:FlightsManager.Controllers.FlightController">
+            <summary>
+            The controller for all flights.
+            </summary>
+        </member>
+        <member name="M:FlightsManager.Controllers.FlightController.#ctor">
+            <summary>
+            The default constructor of the controller.
+            </summary>
+            <remarks>
+            When initiated, the controller connects to the database.
+            </remarks>
+        </member>
+        <member name="M:FlightsManager.Controllers.FlightController.Index(FlightsManager.Models.Flight.FlightIndexVM)">
+            <summary>
+            The Index method.
+            </summary>
+            <param name="model">The Index view.</param>
+            <returns>A view of all flights.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.FlightController.Create">
+            <summary>
+            Method that returns a view where a flight can be created.
+            </summary>
+            <returns>The said view.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.FlightController.Create(FlightsManager.Models.Flight.FlightCreateVM)">
+            <summary>
+            Method through which a flight is created.
+            </summary>
+            <param name="model">The view where the info is stored.</param>
+            <returns>If the info is valid, the method redirects to Index. If not, it returns to the same view.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.FlightController.Edit(System.String)">
+            <summary>
+            Method that returns the view where a flight can be edited through.
+            </summary>
+            <param name="id">The ID of the requested flight.</param>
+            <returns>If successful, the method returns the view. If the id is not correct or if the flight is not found - a NotFound result.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.FlightController.Edit(FlightsManager.Models.Flight.FlightEditVM)">
+            <summary>
+            Method that edits a flight.
+            </summary>
+            <param name="model">The view containing the new info.</param>
+            <returns>If successful, the method redirects back to Index. If the info isn't valid, it returns back the view. If the flight is not found - a NotFound result.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.FlightController.Detail(System.String)">
+            <summary>
+            Method that returns a view of all the flight's reservations.
+            </summary>
+            <param name="id"></param>
+            <returns>The said view.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.FlightController.Delete(System.String)">
+            <summary>
+            Method through which a flight is deleted.
+            </summary>
+            <param name="id">The ID of the requested flight.</param>
+            <returns>Redirects back to Index.</returns>
+        </member>
+        <member name="T:FlightsManager.Controllers.ReservationController">
+            <summary>
+            The controller for all reservations.
+            </summary>
+        </member>
+        <member name="M:FlightsManager.Controllers.ReservationController.#ctor">
+            <summary>
+            The default constructor for the controller.
+            </summary>
+            <remarks>
+            When initiated, the controller connects to the database.
+            </remarks>
+        </member>
+        <member name="M:FlightsManager.Controllers.ReservationController.Index(FlightsManager.Models.Reservation.ReservationIndexVM)">
+            <summary>
+            Method that returns the Index page.
+            </summary>
+            <param name="model">The view of Index.</param>
+            <returns>Index with all reservations.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.ReservationController.PassangerCount">
+            <summary>
+            Method that returns the view of the passenger count.
+            </summary>
+            <returns>The said view.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.ReservationController.PassangerCount(FlightsManager.Models.Reservation.PassangerCountVM)">
+            <summary>
+            Method through which the passenger count is passed on to the Create method.
+            </summary>
+            <param name="model">The view containing the passenger count.</param>
+            <returns>If the count is valid, the method redirects to the Create view. If not, it returns back the same view.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.ReservationController.Create(FlightsManager.Models.Reservation.PassangerCountVM)">
+            <summary>
+            Method that returns the view through which a reservation is created.
+            </summary>
+            <param name="passangerCountVM">The view of the passenger count from the earlier method.</param>
+            <returns>A view through which the reservation can be created.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.ReservationController.Create(FlightsManager.Models.Reservation.ReservationCreateVM)">
+            <summary>
+            Method that creates a reservation.
+            </summary>
+            <param name="model">The view that contains all the needed info for the process.</param>
+            <returns>If successful, the method redirects back to Index. If not - it returns the same view.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.ReservationController.Detail(System.String)">
+            <summary>
+            Method that returns a view of the details of the reservation.
+            </summary>
+            <param name="id">The ID of the reservation.</param>
+            <returns>The view of said reservation details.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.ReservationController.DeleteAsync(System.String)">
+            <summary>
+            Method that deletes a reservation.
+            </summary>
+            <param name="id">The ID of the requested reservation.</param>
+            <returns>Redirects back to Index.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.ReservationController.BuildEmailTemplate(System.String)">
+            <summary>
+            Method that builds the template for the email.
+            </summary>
+            <param name="reservationID">ID of the reservation.</param>
+            <remarks>
+            The said email is the confirmation email that will be sent to the user.
+            </remarks>
+        </member>
+        <member name="M:FlightsManager.Controllers.ReservationController.BuildEmailTemplate(System.String,System.String,System.String)">
+            <summary>
+            Method that prepares the email itself.
+            </summary>
+            <param name="subjectText">The subject of the email.</param>
+            <param name="bodyText">The body of the email.</param>
+            <param name="emailTo">The target email.</param>
+        </member>
+        <member name="M:FlightsManager.Controllers.ReservationController.SendEmail(System.Net.Mail.MailMessage)">
+            <summary>
+            Method that sends the confirmation email.
+            </summary>
+            <param name="mail">The already made email in the secondBuildEmailTemplate method.</param>
+        </member>
+        <member name="T:FlightsManager.Controllers.RoleController">
+            <summary>
+            The controller for all the user roles.
+            </summary>
+        </member>
+        <member name="M:FlightsManager.Controllers.RoleController.#ctor(Microsoft.AspNetCore.Identity.RoleManager{Microsoft.AspNetCore.Identity.IdentityRole},FlightsManager.Data.ApplicationDbContext)">
+            <summary>
+            The constructor for the controller.
+            </summary>
+            <param name="roleManager">Provides the APIs for managing the roles.</param>
+            <param name="dbContext">The database context.</param>
+        </member>
+        <member name="M:FlightsManager.Controllers.RoleController.Create">
+            <summary>
+            Method that returns the view where a role can be created.
+            </summary>
+            <returns>The said view.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.RoleController.Create(Microsoft.AspNetCore.Identity.IdentityRole)">
+            <summary>
+            Method that creates a role.
+            </summary>
+            <param name="role">The view containing the new role.</param>
+            <returns>Redirects to Index.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.RoleController.Index">
+            <summary>
+            The method for Index.
+            </summary>
+            <returns>A view containing all the roles.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.RoleController.EditRoleName(System.String)">
+            <summary>
+            Method that returns a view through which the name of a role can be edited.
+            </summary>
+            <param name="id">ID of the requested role.</param>
+            <returns>If the role is found, the method returns a view of the role. If not - a NotFound result.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.RoleController.EditRoleName(FlightsManager.Models.UserRolesViewModel)">
+            <summary>
+            Method that edits a role's name.
+            </summary>
+            <param name="rolesViewModel">The view containing the new role name.</param>
+            <returns>If successful, the method redirects back to Index. If not, it returns back the view. If the role is not found - a NotFound result.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.RoleController.Delete(System.String)">
+            <summary>
+            Method that deletes a role.
+            </summary>
+            <param name="id">The ID of the requested role.</param>
+            <returns>If the role is deleted, the method redirects to Index. If not, it again redirects to Index. If the role is not found, the method returns a NotFound result.</returns>
+        </member>
+        <member name="T:FlightsManager.Data.ApplicationDbContext">
+            <summary>
+            The database context that the database of FlightsManager uses.
+            </summary>
+        </member>
+        <member name="M:FlightsManager.Data.ApplicationDbContext.#ctor">
+            <summary>
+            The default constructor through which the database context can be initialized.
+            </summary>
+        </member>
+        <member name="M:FlightsManager.Data.ApplicationDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{FlightsManager.Data.ApplicationDbContext})">
+            <summary>
+            Constructor through which you can pass options to the context when you initialize it.
+            </summary>
+            <param name="options">The context options themselves.</param>
+        </member>
+        <member name="P:FlightsManager.Data.ApplicationDbContext.ApplicationUser">
+            <summary>
+            A table for all the users.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.ApplicationDbContext.Flight">
+            <summary>
+            A table for all the flights.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.ApplicationDbContext.Reservation">
+            <summary>
+            A table for all the reservations.
+            </summary>
+        </member>
+        <member name="M:FlightsManager.Data.ApplicationDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Method that configures the schema needed for the framework.
+            </summary>
+        </member>
+        <member name="M:FlightsManager.Data.ApplicationDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Method that configures the server where the database will be stored.
+            </summary>
+        </member>
+        <member name="T:FlightsManager.Data.ApplicationUser">
+            <summary>
+            Implementation of a default user.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.ApplicationUser.FirstName">
+            <summary>
+            The first name of the user.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.ApplicationUser.MiddleName">
+            <summary>
+            The middle name of the user.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.ApplicationUser.LastName">
+            <summary>
+            The last name of the user.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.ApplicationUser.UserPIN">
+            <summary>
+            The user's PIN.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.ApplicationUser.Address">
+            <summary>
+            The address where the user lives.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.ApplicationUser.Nationality">
+            <summary>
+            The nationality of the user.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.ApplicationUser.TicketType">
+            <summary>
+            The type of the user's ticket.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.ApplicationUser.ReservationID">
+            <summary>
+            The ID of the user's reservation.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.ApplicationUser.Reservation">
+            <summary>
+            The user's reservation.
+            </summary>
+        </member>
+        <member name="M:FlightsManager.Data.ApplicationUser.ToString">
+            <summary>
+            Method that returns all the info about the user in a string format.
+            </summary>
+            <returns>String that contains all the info about the user.</returns>
+        </member>
+        <member name="T:FlightsManager.Data.Flight">
+            <summary>
+            This class is used for each flight.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.Flight.AirplaneID">
+            <summary>
+            The ID of the airplane that will be flown.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.Flight.DestinationFrom">
+            <summary>
+            The destination from which the airplane takes off.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.Flight.DestinationTo">
+            <summary>
+            The destination in which the airplane lands.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.Flight.TakesOff">
+            <summary>
+            The date and time of the take off.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.Flight.Landing">
+            <summary>
+            The expected date and time of the landing.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.Flight.AirplaneType">
+            <summary>
+            The type of the airplane.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.Flight.PilotName">
+            <summary>
+            The name of the main pilot that will operate the plane.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.Flight.Capacity">
+            <summary>
+            The capacity of passangers that the airplane can hold.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.Flight.BusinessClassCapacity">
+            <summary>
+            The number of business class seats that the airplane has.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.Flight.Reservations">
+            <summary>
+            A collection of all reservations for the flight.
+            </summary>
+        </member>
+        <member name="M:FlightsManager.Data.Flight.ToString">
+            <summary>
+            Returns a short info about the destinations that the airplanes takes off and lands in.
+            </summary>
+            <returns>The city from which the airplane takes off and the city where it is supposed to land.</returns>
+        </member>
+        <member name="T:FlightsManager.Data.Reservation">
+            <summary>
+            This class is used for each reservation the unassigned user creates.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.Reservation.ID">
+            <summary>
+            The ID of the said reservation.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.Reservation.FlightID">
+            <summary>
+            The ID of the flight for which the reservation is made.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.Reservation.Flight">
+            <summary>
+            The flight for which the reservation is made.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Data.Reservation.Passangers">
+            <summary>
+            The collection of passengers that are in the reservation.
+            </summary>
+        </member>
+        <member name="T:FlightsManager.Models.Flight.FlightCreateVM">
+            <summary>
+            The viewmodel through which a flight is created.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightCreateVM.DestinationFrom">
+            <summary>
+            The city from which the airplane takes off.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightCreateVM.DestinationTo">
+            <summary>
+            The city where the airplane has to land.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightCreateVM.TakesOff">
+            <summary>
+            The time when the plane is supposed to take off.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightCreateVM.Landing">
+            <summary>
+            The time when the plane is supposed to land.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightCreateVM.AirplaneType">
+            <summary>
+            The type of the airplane.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightCreateVM.PilotName">
+            <summary>
+            The name of the main pilot of this flight.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightCreateVM.Capacity">
+            <summary>
+            The capacity of passengers the plane holds.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightCreateVM.BusinessClassCapacity">
+            <summary>
+            The number of business class seats.
+            </summary>
+        </member>
+        <member name="T:FlightsManager.Models.Flight.FlightDetailVM">
+            <summary>
+            The viewmodel through which we can see all of the flight's reservations.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightDetailVM.Items">
+            <summary>
+            The collection of all reservations of the flight.
+            </summary>
+        </member>
+        <member name="T:FlightsManager.Models.Flight.FlightEditVM">
+            <summary>
+            The viewmodel through which a flight is edited.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightEditVM.AirplaneID">
+            <summary>
+            The ID of the airplane.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightEditVM.DestinationFrom">
+            <summary>
+            The city from which the airplane takes off.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightEditVM.DestinationTo">
+            <summary>
+            The city where the airplane has to land.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightEditVM.TakesOff">
+            <summary>
+            The time when the plane is supposed to take off.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightEditVM.Landing">
+            <summary>
+            The time when the plane is supposed to land.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightEditVM.AirplaneType">
+            <summary>
+            The type of the airplane.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightEditVM.PilotName">
+            <summary>
+            The name of the main pilot of this flight.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightEditVM.Capacity">
+            <summary>
+            The capacity of passengers the plane holds.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightEditVM.BusinessClassCapacity">
+            <summary>
+            The number of business class seats.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightEditVM.Reservations">
+            <summary>
+            A collection of all the flight's reservations.
+            </summary>
+        </member>
+        <member name="T:FlightsManager.Models.Flight.FlightIndexVM">
+            <summary>
+            The viewmodel of the Flight Index.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightIndexVM.Pager">
+            <summary>
+            The pager of Index.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightIndexVM.Items">
+            <summary>
+            All of the flights.
+            </summary>
+        </member>
+        <member name="T:FlightsManager.Models.Flight.FlightVM">
+            <summary>
+            Viewmodel for each flight.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightVM.AirplaneID">
+            <summary>
+            The ID of the airplane.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightVM.DestinationFrom">
+            <summary>
+            The city from which the airplane takes off.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightVM.DestinationTo">
+            <summary>
+            The city where the airplane has to land.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightVM.TakesOff">
+            <summary>
+            The time when the plane is supposed to take off.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightVM.Landing">
+            <summary>
+            The time when the plane is supposed to land.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightVM.AirplaneType">
+            <summary>
+            The type of the airplane.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightVM.PilotName">
+            <summary>
+            The name of the main pilot of this flight.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightVM.Capacity">
+            <summary>
+            The capacity of passengers the plane holds.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightVM.BusinessClassCapacity">
+            <summary>
+            The number of business class seats.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightVM.Reservations">
+            <summary>
+            A collection of all the flight's reservations.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Flight.FlightVM.ContiniusFlight">
+            <summary>
+            The duration of the flight.
+            </summary>
+        </member>
+        <member name="T:FlightsManager.Models.Base.PagerVM">
+            <summary>
+            The viewmodel of each pager.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Base.PagerVM.CurrentPage">
+            <summary>
+            The number of the current page.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Base.PagerVM.PagesCount">
+            <summary>
+            The number of all pages.
+            </summary>
+        </member>
+        <member name="T:FlightsManager.Models.Reservation.PassangerCountVM">
+            <summary>
+            Viewmodel for the passenger count of a reservation.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.PassangerCountVM.PassangerCount">
+            <summary>
+            The passenger count.
+            </summary>
+        </member>
+        <member name="T:FlightsManager.Models.Reservation.ReservationCreateVM">
+            <summary>
+            The viewmodel through which a reservation is created.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationCreateVM.Reservations">
+            <summary>
+            Collection of all reservations that will be made.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationCreateVM.PassangerCount">
+            <summary>
+            The passenger count of the reservation.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationCreateVM.Flights">
+            <summary>
+            The list of flights.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationCreateVM.Flight">
+            <summary>
+            The flight for which the reservation is being made.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationCreateVM.Email">
+            <summary>
+            The email of the person making the reservation.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationCreateVM.IsFirstTime">
+            <summary>
+            Bool through which the person's checked if he has done a reservation already on the website.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationCreateVM.Message">
+            <summary>
+            A message of the person making the reservation.
+            </summary>
+        </member>
+        <member name="T:FlightsManager.Models.Reservation.ReservationDetailVM">
+            <summary>
+            The viewmodel for the Reservation Detail page.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationDetailVM.Items">
+            <summary>
+            All reservations.
+            </summary>
+        </member>
+        <member name="T:FlightsManager.Models.Reservation.ReservationIndexDetailVM">
+            <summary>
+            A viewmodel for the Index page for ReservationDetail.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationIndexDetailVM.ID">
+            <summary>
+            ID of the reservation.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationIndexDetailVM.Flight">
+            <summary>
+            The flight that the reservation belongs to.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationIndexDetailVM.PassangerCount">
+            <summary>
+            The amount of passengers in the reservation.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationIndexDetailVM.IsConfirm">
+            <summary>
+            Is the reservation confirmed or not.
+            </summary>
+        </member>
+        <member name="T:FlightsManager.Models.Reservation.ReservationIndexVM">
+            <summary>
+            Viewmodel for the Index Reservation page.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationIndexVM.Pager">
+            <summary>
+            Pager for the Reservation page.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationIndexVM.Items">
+            <summary>
+            Collection of all reservations.
+            </summary>
+        </member>
+        <member name="T:FlightsManager.Models.Reservation.ReservationVM">
+            <summary>
+            A viewmodel for each reservation.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationVM.Flight">
+            <summary>
+            The flight to which the reservation belongs to.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationVM.FirstName">
+            <summary>
+            The first name of the passenger.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationVM.MiddleName">
+            <summary>
+            The middle name of the passenger.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationVM.LastName">
+            <summary>
+            The last name of the passenger.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationVM.Nationality">
+            <summary>
+            The nationality of the passenger.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationVM.PIN">
+            <summary>
+            The PIN of the passenger.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationVM.Email">
+            <summary>
+            The email of the passenger.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationVM.TelephoneNumber">
+            <summary>
+            The telephone number of the passenger.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.Reservation.ReservationVM.TicketType">
+            <summary>
+            The type of the passenger's ticket.
+            </summary>
+        </member>
+        <member name="M:FlightsManager.Models.Reservation.ReservationVM.ToString">
+            <summary>
+            Method that returns all the information about the reservation.
+            </summary>
+            <returns>Returns all the information in a string format.</returns>
+        </member>
+        <member name="T:FlightsManager.Models.UserRolesViewModel">
+            <summary>
+            Viewmodel for the user roles.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserRolesViewModel.RoleId">
+            <summary>
+            The ID of the role.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserRolesViewModel.RoleName">
+            <summary>
+            The name of the role.
+            </summary>
+        </member>
+        <member name="T:FlightsManager.Models.UserViewModels.CreateUserViewModel">
+            <summary>
+            Viewmodel through which a user is created.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.CreateUserViewModel.Username">
+            <summary>
+            The user's username.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.CreateUserViewModel.FirstName">
+            <summary>
+            The user's first name.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.CreateUserViewModel.LastName">
+            <summary>
+            The user's last name.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.CreateUserViewModel.Email">
+            <summary>
+            The user's email.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.CreateUserViewModel.UserPIN">
+            <summary>
+            The user's PIN.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.CreateUserViewModel.TelephoneNumber">
+            <summary>
+            The user's telephone number.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.CreateUserViewModel.Address">
+            <summary>
+            The user's address.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.CreateUserViewModel.Password">
+            <summary>
+            The user's password.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.CreateUserViewModel.ConfirmPassword">
+            <summary>
+            The confirmation password.
+            </summary>
+            <remarks>
+            The password and the confirmation password should be exactly the same.
+            </remarks>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.CreateUserViewModel.Roles">
+            <summary>
+            The role of the user.
+            </summary>
+        </member>
+        <member name="T:FlightsManager.Models.UserViewModels.EditUserViewModel">
+            <summary>
+            Viewmodel through which an user can be edited.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.EditUserViewModel.UserId">
+            <summary>
+            The ID of the user.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.EditUserViewModel.Username">
+            <summary>
+            The user's username.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.EditUserViewModel.FirstName">
+            <summary>
+            The user's first name.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.EditUserViewModel.LastName">
+            <summary>
+            The user's last name.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.EditUserViewModel.Email">
+            <summary>
+            The user's email.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.EditUserViewModel.UserPIN">
+            <summary>
+            The user's PIN.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.EditUserViewModel.TelephoneNumber">
+            <summary>
+            The user's telephone number.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.EditUserViewModel.Address">
+            <summary>
+            The user's address.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.EditUserViewModel.Roles">
+            <summary>
+            The user's role.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.EditUserViewModel.RoleId">
+            <summary>
+            The role's ID.
+            </summary>
+        </member>
+        <member name="T:FlightsManager.Models.UserViewModels.GetAllUsersViewModel">
+            <summary>
+            The viewmodel through which all users can be listed.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.GetAllUsersViewModel.UserId">
+            <summary>
+            The ID of the user.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.GetAllUsersViewModel.Username">
+            <summary>
+            The user's username.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.GetAllUsersViewModel.FirstName">
+            <summary>
+            The user's first name.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.GetAllUsersViewModel.LastName">
+            <summary>
+            The user's last name.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.GetAllUsersViewModel.Email">
+            <summary>
+            The user's email.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.GetAllUsersViewModel.UserPIN">
+            <summary>
+            The user's PIN.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.GetAllUsersViewModel.TelephoneNumber">
+            <summary>
+            The user's telephone number.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.GetAllUsersViewModel.Address">
+            <summary>
+            The user's address.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.GetAllUsersViewModel.Roles">
+            <summary>
+            The users' roles.
+            </summary>
+        </member>
+        <member name="P:FlightsManager.Models.UserViewModels.GetAllUsersViewModel.RoleId">
+            <summary>
+            The role's id.
+            </summary>
+        </member>
     </members>
 </doc>

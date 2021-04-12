@@ -451,21 +451,6 @@
             The collection of passengers that are in the reservation.
             </summary>
         </member>
-        <member name="T:FlightsManager.Migrations.Initial">
-            <summary>
-            The first migration that was created for the database.
-            </summary>
-        </member>
-        <member name="M:FlightsManager.Migrations.Initial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <summary>
-            Method that will be used when the migration is being applied.
-            </summary>
-        </member>
-        <member name="M:FlightsManager.Migrations.Initial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <summary>
-            Method that will be used when the migration is being removed.
-            </summary>
-        </member>
         <member name="T:FlightsManager.Models.Flight.FlightCreateVM">
             <summary>
             The viewmodel through which a flight is created.
