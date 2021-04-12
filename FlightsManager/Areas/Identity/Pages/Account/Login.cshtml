@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Page Title - SB Admin</title>
+    <title>Login</title>
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
 </head>
@@ -22,7 +22,7 @@
                                 <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                 <div class="card-body">
                                     <form id="account" method="post">
-                                        <h4>Use a local account to log in.</h4>
+                                        <h4 class="text-center">Use a local account to log in.</h4>
                                         <hr />
                                         <div asp-validation-summary="All" class="text-danger"></div>
                                         <div class="form-group">
@@ -46,12 +46,6 @@
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary">Log in</button>
                                         </div>
-                                        <div class="form-group">
-                                            <p>
-                                                <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                                            </p>
-
-                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -59,20 +53,6 @@
                     </div>
                 </div>
             </main>
-        </div>
-        <div id="layoutAuthentication_footer">
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Flights Manager 202</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
