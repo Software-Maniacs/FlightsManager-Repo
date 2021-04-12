@@ -49,6 +49,10 @@
   }
 }
 
+.bg-primary {
+    background-color:black !important;
+}
+
 // Responsive styling for the sidenav layout
 @include media-breakpoint-up(lg) {
   #layoutSidenav {

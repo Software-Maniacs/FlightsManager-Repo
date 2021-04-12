@@ -29,7 +29,7 @@ namespace FlightsManager.Controllers
             this._dbContext = dbContext;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> UserList()
         {
             var users = await _userManager.Users.ToListAsync();
             var getAllUsersViewModel = new List<GetAllUsersViewModel>();
@@ -45,7 +45,7 @@ namespace FlightsManager.Controllers
             return View(getAllUsersViewModel);
         }
 
-        public ActionResult Dashboard()
+        public ActionResult Index()
         {
             return View();
         }

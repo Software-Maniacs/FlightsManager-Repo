@@ -695,3 +695,5 @@ C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Edit.cshtml.g.cs
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Role\EditRoleName.cshtml.g.cs
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_AdminLayout.cshtml.g.cs
+C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EmployeeLayout.cshtml.g.cs
+C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Admin\UserList.cshtml.g.cs
