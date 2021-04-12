@@ -90,13 +90,10 @@
                             <nav class="sb-sidenav-menu-nested nav">
                                 <ul>
                                     <li class="nav-item">
-                                        <a class="nav-link text-light font-weight-light" asp-area="" asp-controller="Reservation" asp-action="Create">Create reservation</a>
+                                        <a class="nav-link text-light font-weight-light" asp-area="" asp-controller="Reservation" asp-action="PassangerCount">Create reservation</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link text-light font-weight-light" asp-area="" asp-controller="Reservation" asp-action="Index">All reservations</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-light font-weight-light" asp-area="" asp-controller="Reservation" asp-action="Detail">Reservation details</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -114,9 +111,6 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link text-light font-weight-light" asp-area="" asp-controller="Flight" asp-action="Index">All flights</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-light font-weight-light" asp-area="" asp-controller="Flights" asp-action="Detail">Flight details</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -139,7 +133,7 @@
                     <div class="row">
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-primary text-white mb-4">
-                                <div class="card-body">All users count: </div>
+                                <div class="card-body">All users count: @FlightsManager.Models.AdminLayoutVM.UsersCount()</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" asp-controller="Admin" asp-action="UserList">View users list</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -148,7 +142,7 @@
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-warning text-white mb-4">
-                                <div class="card-body">All roles count: </div>
+                                <div class="card-body">All roles count: @FlightsManager.Models.AdminLayoutVM.RolesCount()</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" asp-controller="Role" asp-action="Index">View roles list</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -157,7 +151,7 @@
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-success text-white mb-4">
-                                <div class="card-body">All flights count: </div>
+                                <div class="card-body">All flights count: @FlightsManager.Models.AdminLayoutVM.FlightsCount()</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" asp-controller="Flight" asp-action="Index">View flights list</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -166,7 +160,7 @@
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-danger text-white mb-4">
-                                <div class="card-body">All reservations count: </div>
+                                <div class="card-body">All reservations count: @FlightsManager.Models.AdminLayoutVM.ReservationsCount()</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" asp-controller="Reservation" asp-action="Index">View reservations list</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>

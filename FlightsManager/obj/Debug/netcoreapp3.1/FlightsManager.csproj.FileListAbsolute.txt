@@ -857,3 +857,5 @@ C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\XML\netcoreapp
 D:\FlightsManager-Repo\FlightsManager\bin\Debug\netcoreapp3.1\FlightsManager.xml
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\FlightsManager.csprojAssemblyReference.cache
 D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_AdminLayout.cshtml.g.cs
+D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Admin\UserList.cshtml.g.cs
+D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EmployeeLayout.cshtml.g.cs
