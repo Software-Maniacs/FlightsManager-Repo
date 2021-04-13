@@ -8,7 +8,6 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Role ID</th>
             <th>Role name</th>
             <th></th>
             <th>Action</th>
@@ -18,7 +17,6 @@
         @foreach (var role in Model)
         {
         <tr>
-            <td>@role.RoleId</td>
             <td>@role.RoleName</td>
             <td>
                 <form asp-action="EditRoleName" asp-route-id="@role.RoleId" method="get">
