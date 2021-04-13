@@ -45,25 +45,34 @@ namespace FlightsManager.Controllers
         /// <returns>A view containing all users.</returns>
         public async Task<IActionResult> Index()
         {
+            return View();
+        }
+
+        public async Task<IActionResult> UserList()
+        {
             var users = await _userManager.Users.Where(u => u.ReservationID == null).ToListAsync();
 
             var getAllUsersViewModel = new List<GetAllUsersViewModel>();
 
             foreach (ApplicationUser user in users)
             {
-                var allUsersVM = new GetAllUsersViewModel {UserId=user.Id, Username = user.UserName,
-                    FirstName=user.FirstName, LastName = user.LastName, Address =user.Address, Email=user.Email,
-                    UserPIN = user.UserPIN, TelephoneNumber=user.PhoneNumber, Roles= await GetUserRoles(user)
+                var allUsersVM = new GetAllUsersViewModel
+                {
+                    UserId = user.Id,
+                    Username = user.UserName,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Address = user.Address,
+                    Email = user.Email,
+                    UserPIN = user.UserPIN,
+                    TelephoneNumber = user.PhoneNumber,
+                    Roles = await GetUserRoles(user)
                 };
                 getAllUsersViewModel.Add(allUsersVM);
             }
             return View(getAllUsersViewModel);
         }
 
-        public ActionResult Dashboard()
-        {
-            return View();
-        }
         private async Task<List<string>> GetUserRoles(ApplicationUser user)
         {
             return new List<string>(await _userManager.GetRolesAsync(user));
