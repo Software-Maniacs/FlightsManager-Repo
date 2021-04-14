@@ -8806,25 +8806,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Niki\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Laptop_HP\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager_Tests\\FlightsManager_Tests.csproj",
+      "projectUniqueName": "D:\\FlightsManager-Repo\\FlightsManager_Tests\\FlightsManager_Tests.csproj",
       "projectName": "FlightsManager_Tests",
-      "projectPath": "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager_Tests\\FlightsManager_Tests.csproj",
-      "packagesPath": "C:\\Users\\Niki\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager_Tests\\obj\\",
+      "projectPath": "D:\\FlightsManager-Repo\\FlightsManager_Tests\\FlightsManager_Tests.csproj",
+      "packagesPath": "C:\\Users\\Laptop_HP\\.nuget\\packages\\",
+      "outputPath": "D:\\FlightsManager-Repo\\FlightsManager_Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Niki\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Laptop_HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -8837,8 +8837,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager\\FlightsManager.csproj": {
-              "projectPath": "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager\\FlightsManager.csproj"
+            "D:\\FlightsManager-Repo\\FlightsManager\\FlightsManager.csproj": {
+              "projectPath": "D:\\FlightsManager-Repo\\FlightsManager\\FlightsManager.csproj"
             }
           }
         }
@@ -8881,7 +8881,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
