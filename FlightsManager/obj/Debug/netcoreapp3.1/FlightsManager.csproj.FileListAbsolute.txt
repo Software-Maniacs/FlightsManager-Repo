@@ -859,8 +859,14 @@ C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netc
 D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_AdminLayout.cshtml.g.cs
 D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Admin\UserList.cshtml.g.cs
 D:\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EmployeeLayout.cshtml.g.cs
+<<<<<<< HEAD
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\bin\Debug\netcoreapp3.1\FlightsManager.xml
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Admin\UserList.cshtml.g.cs
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Reservation\EmailConfirm.cshtml.g.cs
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_AdminLayout.cshtml.g.cs
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EmployeeLayout.cshtml.g.cs
+=======
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Admin\UserList.cshtml.g.cs
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_AdminLayout.cshtml.g.cs
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EmployeeLayout.cshtml.g.cs
+>>>>>>> 60f0ffacef154831770e1e1595355a03ad731f3c
