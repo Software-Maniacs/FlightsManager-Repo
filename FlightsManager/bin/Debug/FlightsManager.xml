@@ -33,7 +33,7 @@
             </summary>
             <returns>A view, containing the list of users.</returns>
         </member>
-        <member name="M:FlightsManager.Controllers.AdminController.CreateUser">
+        <member name="M:FlightsManager.Controllers.AdminController.Create">
             <summary>
             Method that redirects to the CreateUser view.
             </summary>

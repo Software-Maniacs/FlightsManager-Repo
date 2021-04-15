@@ -86,10 +86,11 @@ namespace FlightsManager.Controllers
         }
 
         /// <summary>
-        /// Method that redirects to the CreateUser view.
+        /// Method that redirects to the Create view.
         /// </summary>
         /// <returns>A view, where the admin can create a user.</returns>
-        public IActionResult CreateUser()
+        [HttpGet]
+        public IActionResult Create()
         {
             CreateUserViewModel model = new CreateUserViewModel();
 
@@ -101,6 +102,7 @@ namespace FlightsManager.Controllers
         /// </summary>
         /// <param name="createUser">The needed info for the user to be created.</param>
         /// <returns>If successful, the method redirects to index. If not, it returns back the view.</returns>
+        [HttpPost]
         public async Task<IActionResult> Create(CreateUserViewModel createUser)
         {
             var roles = _roleManager.Roles.ToList();
