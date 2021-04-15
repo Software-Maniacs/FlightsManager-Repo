@@ -870,3 +870,5 @@ C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netc
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_AdminLayout.cshtml.g.cs
 C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EmployeeLayout.cshtml.g.cs
 >>>>>>> 60f0ffacef154831770e1e1595355a03ad731f3c
+C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\ConfirmReservation.cshtml.g.cs
+C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Reservation\ConfirmReservation.cshtml.g.cs

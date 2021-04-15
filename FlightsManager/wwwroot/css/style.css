@@ -137,15 +137,26 @@ a {
      outline: none !important;
 }
 
+.confirm-reservation{
+    text-align:center;
+    font-size:large;
+}
+
+h1.confirm-reservation{
+    margin-top:50px;
+    margin-bottom:35px;
+    font-size:xx-large;
+}
+
 a,
 .btn {
-     text-decoration: none !important;
-     outline: none !important;
-     -webkit-transition: all .3s ease-in-out;
-     -moz-transition: all .3s ease-in-out;
-     -ms-transition: all .3s ease-in-out;
-     -o-transition: all .3s ease-in-out;
-     transition: all .3s ease-in-out;
+    text-decoration: none !important;
+    outline: none !important;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 img {

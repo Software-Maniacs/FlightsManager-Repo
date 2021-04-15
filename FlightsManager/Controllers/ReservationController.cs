@@ -210,7 +210,7 @@ namespace FlightsManager.Controllers
 
                     BuildEmailTemplate(reservationID);
 
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction("ConfirmReservation","Reservation");
                 }
             }
 
@@ -394,6 +394,11 @@ namespace FlightsManager.Controllers
 
             string msg = "Your Reservation Is Confirmed!";
             return Json(msg);
+        }
+
+        public IActionResult ConfirmReservation()
+        {
+            return View();
         }
     }
 }
