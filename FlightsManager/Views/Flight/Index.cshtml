@@ -36,8 +36,11 @@
                 <th>Capacity</th>
                 <th>BusinessClassCapacity</th>
                 <th></th>
-                <th></th>
-                <th></th>
+                @if (User.IsInRole("Admin"))
+                {
+                    <th></th>
+                    <th></th>
+                }
             </tr>
         </thead>
 
