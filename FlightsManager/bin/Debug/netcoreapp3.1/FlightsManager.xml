@@ -35,7 +35,7 @@
         </member>
         <member name="M:FlightsManager.Controllers.AdminController.Create">
             <summary>
-            Method that redirects to the CreateUser view.
+            Method that redirects to the Create view.
             </summary>
             <returns>A view, where the admin can create a user.</returns>
         </member>
