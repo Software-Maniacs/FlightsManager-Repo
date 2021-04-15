@@ -2,37 +2,40 @@
 @model List<FlightsManager.Models.UserRolesViewModel>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";}
-<h1>All Roles</h1>
-<a asp-action="Create">Create new Role</a>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Role name</th>
-            <th></th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var role in Model)
-        {
-        <tr>
-            <td>@role.RoleName</td>
-            <td>
-                <form asp-action="EditRoleName" asp-route-id="@role.RoleId" method="get">
-                    <button type="submit" class="btn btn-sm btn-primary">
-                        Edit Role name
-                    </button>
-                </form>
-            </td>
-            <td>
-                <form asp-action="Delete" asp-route-id="@role.RoleId" method="post">
-                    <button type="submit" class="btn btn-sm btn-danger">
-                        Delete
-                    </button>
-                </form>
-            </td>
-        </tr>
-        }
-    </tbody>
-</table>
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";}
+
+<div class="userPage">
+    <h1>All Roles</h1>
+    <a asp-action="Create">Create new Role</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Role name</th>
+                <th></th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var role in Model)
+            {
+                <tr>
+                    <td>@role.RoleName</td>
+                    <td>
+                        <form asp-action="EditRoleName" asp-route-id="@role.RoleId" method="get">
+                            <button type="submit" class="btn btn-sm btn-primary">
+                                Edit Role name
+                            </button>
+                        </form>
+                    </td>
+                    <td>
+                        <form asp-action="Delete" asp-route-id="@role.RoleId" method="post">
+                            <button type="submit" class="btn btn-sm btn-danger">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

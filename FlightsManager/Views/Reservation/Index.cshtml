@@ -2,42 +2,59 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (User.IsInRole("Admin"))
+    {
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+    else if (User.IsInRole("Employee"))
+    {
+        Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+    }
 }
 
-<h1>Index</h1>
+<div class="userPage">
+    <h1>All Reservations</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 
-<table id="table" class="table table-striped">
-    <thead>
-        <tr>
-            <th>Reservation</th>
-            <th>Flight</th>
-            <th>Passanger Count</th>
-            <th>Confirm</th>
-            <th></th>
-        </tr>
-    </thead>
+    @{
+        if (User.IsInRole("Admin"))
+        {
+            <!--
+                <p>
+                <a asp-action="Create">Create New</a>
+            </p>
+            -->
+        }
+    }
 
-    <tbody>
-        @for(int i = 1; i <= Model.Items.Count; i++)
+    <table id="table" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Reservation</th>
+                <th>Flight</th>
+                <th>Passanger Count</th>
+                <th>Confirm</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @for (int i = 1; i <= Model.Items.Count; i++)
             {
-        <tr>
-            <td>@i</td>
-            <td>@Model.Items[i - 1].Flight</td>
-            <td>@Model.Items[i - 1].PassangerCount</td>
-            <td>@Model.Items[i - 1].IsConfirm</td>
-            <td>
-                <a asp-action="Detail" asp-route-id="@Model.Items[i - 1].ID" class="btn btn-success">Detail</a>
-                @if (!Model.Items[i - 1].IsConfirm)
-                {
-                    <a asp-action="Delete" asp-route-id="@Model.Items[i - 1].ID" class="btn btn-danger">Delete</a>
-                }
-            </td>
-        </tr>
+                <tr>
+                    <td>@i</td>
+                    <td>@Model.Items[i - 1].Flight</td>
+                    <td>@Model.Items[i - 1].PassangerCount</td>
+                    <td>@Model.Items[i - 1].IsConfirm</td>
+                    <td>
+                        <a asp-action="Detail" asp-route-id="@Model.Items[i - 1].ID" class="btn btn-success">Detail</a>
+                        @if (!Model.Items[i - 1].IsConfirm)
+                        {
+                            <a asp-action="Delete" asp-route-id="@Model.Items[i - 1].ID" class="btn btn-danger">Delete</a>
+                        }
+                    </td>
+                </tr>
             }
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>

@@ -12,13 +12,11 @@ using System.Threading.Tasks;
 
 namespace FlightManager_Tests.ControllerTests
 {
-    [TestFixture]
     public class FlightControllerTests
     {
         private FlightIndexVM _flightIndex;
         private FlightController _controller;
         private FlightCreateVM _flight;
-        private ApplicationDbContext db;
         [SetUp]
         public void Setup()
         {

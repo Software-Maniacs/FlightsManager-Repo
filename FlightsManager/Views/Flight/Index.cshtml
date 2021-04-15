@@ -2,51 +2,65 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (User.IsInRole("Admin"))
+    {
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+    else if (User.IsInRole("Employee"))
+    {
+        Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+    }
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-
-<table id="table" class="table table-striped">
-    <thead>
-        <tr>
-            <th>Airplane Type</th>
-            <th>Destination From</th>
-            <th>Destination To</th>
-            <th>Take-Off</th>
-            <th>Flight Duration</th>
-            <th>Pilot Name</th>
-            <th>Capacity</th>
-            <th>BusinessClassCapacity</th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-
-    <tbody>
-        @foreach (var item in Model.Items)
+<div class="userPage">
+    <h1>All Flights</h1>
+    @{
+        if (User.IsInRole("Admin"))
         {
-            <tr>
-                <td>@Html.DisplayFor(m => item.AirplaneType)</td>
-                <td>@Html.DisplayFor(m => item.DestinationFrom)</td>
-                <td>@Html.DisplayFor(m => item.DestinationTo)</td>
-                <td>@Html.DisplayFor(m => item.TakesOff)</td>
-                <td>@Html.DisplayFor(m => item.ContiniusFlight)</td>
-                <td>@Html.DisplayFor(m => item.PilotName)</td>
-                <td>@Html.DisplayFor(m => item.Capacity)</td>
-                <td>@Html.DisplayFor(m => item.BusinessClassCapacity)</td>
-                <td><a asp-action="Detail" asp-route-id="@item.AirplaneID" class="btn btn-success">Detail</a></td>
-                @if (User.IsInRole("Admin"))
-                {
-                    <td><a asp-action="Edit" asp-route-id="@item.AirplaneID" class="btn btn-primary">Edit</a></td>
-                    <td><a asp-action="Delete" asp-route-id="@item.AirplaneID" class="btn btn-danger">Delete</a></td>
-                }
-            </tr>
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>         
         }
-    </tbody>
-</table>
+    }
+
+
+    <table id="table" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Airplane Type</th>
+                <th>Destination From</th>
+                <th>Destination To</th>
+                <th>Take-Off</th>
+                <th>Flight Duration</th>
+                <th>Pilot Name</th>
+                <th>Capacity</th>
+                <th>BusinessClassCapacity</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => item.AirplaneType)</td>
+                    <td>@Html.DisplayFor(m => item.DestinationFrom)</td>
+                    <td>@Html.DisplayFor(m => item.DestinationTo)</td>
+                    <td>@Html.DisplayFor(m => item.TakesOff)</td>
+                    <td>@Html.DisplayFor(m => item.ContiniusFlight)</td>
+                    <td>@Html.DisplayFor(m => item.PilotName)</td>
+                    <td>@Html.DisplayFor(m => item.Capacity)</td>
+                    <td>@Html.DisplayFor(m => item.BusinessClassCapacity)</td>
+                    <td><a asp-action="Detail" asp-route-id="@item.AirplaneID" class="btn btn-success">Detail</a></td>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <td><a asp-action="Edit" asp-route-id="@item.AirplaneID" class="btn btn-primary">Edit</a></td>
+                        <td><a asp-action="Delete" asp-route-id="@item.AirplaneID" class="btn btn-danger">Delete</a></td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

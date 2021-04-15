@@ -4,6 +4,69 @@
         <name>FlightsManager</name>
     </assembly>
     <members>
+        <member name="T:FlightsManager.Controllers.AdminController">
+            <summary>
+            The controller for Admin.
+            </summary>
+        </member>
+        <member name="M:FlightsManager.Controllers.AdminController.#ctor(Microsoft.AspNetCore.Identity.UserManager{FlightsManager.Data.ApplicationUser},Microsoft.AspNetCore.Identity.RoleManager{Microsoft.AspNetCore.Identity.IdentityRole},Microsoft.AspNetCore.Identity.IPasswordHasher{FlightsManager.Data.ApplicationUser},FlightsManager.Data.ApplicationDbContext)">
+            <summary>
+            The default constructor for AdminController.
+            </summary>
+            <remarks>
+            When the constructor is initiated, the controller connects to the database.
+            </remarks>
+            <param name="userManager">Provides the APIs for managing user.</param>
+            <param name="roleManager">Provides the APIs for managing roles.</param>
+            <param name="passwordHasher">Provides an abstraction for hashing passwords.</param>
+            <param name="dbContext">The database context.</param>
+        </member>
+        <member name="M:FlightsManager.Controllers.AdminController.Index">
+            <summary>
+            Index action.
+            </summary>
+            <returns>View of Index.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.AdminController.UserList">
+            <summary>
+            Method that lists all users.
+            </summary>
+            <returns>A view, containing the list of users.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.AdminController.CreateUser">
+            <summary>
+            Method that redirects to the CreateUser view.
+            </summary>
+            <returns>A view, where the admin can create a user.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.AdminController.Create(FlightsManager.Models.UserViewModels.CreateUserViewModel)">
+            <summary>
+            Method through which the admin creates a user.
+            </summary>
+            <param name="createUser">The needed info for the user to be created.</param>
+            <returns>If successful, the method redirects to index. If not, it returns back the view.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.AdminController.Edit(System.String)">
+            <summary>
+            Method that gets the Edit view.
+            </summary>
+            <param name="id">The ID of the requested user.</param>
+            <returns>If found, it returns the Edit view with the info of the user on it. If not - a NotFound result.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.AdminController.Edit(FlightsManager.Models.UserViewModels.EditUserViewModel)">
+            <summary>
+            Method through which a user is edited.
+            </summary>
+            <param name="userViewModel">The view, containing the user's new info.</param>
+            <returns>If successful, it redirects to Index. If not, it returns the view again. If the user can't be found - a NotFound result.</returns>
+        </member>
+        <member name="M:FlightsManager.Controllers.AdminController.Delete(System.String)">
+            <summary>
+            Method through which a user is deleted.
+            </summary>
+            <param name="id">The ID of the requested user.</param>
+            <returns>If successful, the method redirects to Index. If not, it returns a NotFound result. If the requested user's info is not valid, it returns back the view.</returns>
+        </member>
         <member name="T:FlightsManager.Controllers.EmployeeController">
             <summary>
             The controller for all employees.

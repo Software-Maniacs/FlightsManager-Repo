@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Acer\\Desktop\\Project\\FlightsManager\\FlightsManager_Tests\\FlightsManager_Tests.csproj": {}
+    "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager_Tests\\FlightsManager_Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Acer\\Desktop\\Project\\FlightsManager\\FlightsManager\\FlightsManager.csproj": {
+    "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager\\FlightsManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\Project\\FlightsManager\\FlightsManager\\FlightsManager.csproj",
+        "projectUniqueName": "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager\\FlightsManager.csproj",
         "projectName": "FlightsManager",
-        "projectPath": "C:\\Users\\Acer\\Desktop\\Project\\FlightsManager\\FlightsManager\\FlightsManager.csproj",
-        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\Desktop\\Project\\FlightsManager\\FlightsManager\\obj\\",
+        "projectPath": "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager\\FlightsManager.csproj",
+        "packagesPath": "C:\\Users\\Niki\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Niki\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -94,25 +93,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Acer\\Desktop\\Project\\FlightsManager\\FlightsManager_Tests\\FlightsManager_Tests.csproj": {
+    "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager_Tests\\FlightsManager_Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\Project\\FlightsManager\\FlightsManager_Tests\\FlightsManager_Tests.csproj",
+        "projectUniqueName": "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager_Tests\\FlightsManager_Tests.csproj",
         "projectName": "FlightsManager_Tests",
-        "projectPath": "C:\\Users\\Acer\\Desktop\\Project\\FlightsManager\\FlightsManager_Tests\\FlightsManager_Tests.csproj",
-        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\Desktop\\Project\\FlightsManager\\FlightsManager_Tests\\obj\\",
+        "projectPath": "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager_Tests\\FlightsManager_Tests.csproj",
+        "packagesPath": "C:\\Users\\Niki\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager_Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Niki\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -127,8 +125,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Acer\\Desktop\\Project\\FlightsManager\\FlightsManager\\FlightsManager.csproj": {
-                "projectPath": "C:\\Users\\Acer\\Desktop\\Project\\FlightsManager\\FlightsManager\\FlightsManager.csproj"
+              "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager\\FlightsManager.csproj": {
+                "projectPath": "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager\\FlightsManager.csproj"
               }
             }
           }
@@ -167,14 +165,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

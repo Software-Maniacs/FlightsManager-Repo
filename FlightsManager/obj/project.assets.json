@@ -9040,25 +9040,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Acer\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Niki\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Acer\\Desktop\\Project\\FlightsManager\\FlightsManager\\FlightsManager.csproj",
+      "projectUniqueName": "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager\\FlightsManager.csproj",
       "projectName": "FlightsManager",
-      "projectPath": "C:\\Users\\Acer\\Desktop\\Project\\FlightsManager\\FlightsManager\\FlightsManager.csproj",
-      "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Acer\\Desktop\\Project\\FlightsManager\\FlightsManager\\obj\\",
+      "projectPath": "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager\\FlightsManager.csproj",
+      "packagesPath": "C:\\Users\\Niki\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Niki\\Documents\\GitHub\\FlightsManager-Repo\\FlightsManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Niki\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -9134,7 +9132,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

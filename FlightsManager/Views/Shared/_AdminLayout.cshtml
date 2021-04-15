@@ -13,7 +13,7 @@
 </head>
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark"style="background: rgb(12,26,63); background: linear-gradient(102deg, rgba(12,26,63,1) 0%, rgba(11,97,130,1) 100%);">
-        <a class="navbar-brand" asp-page="/Views/Admin/Index">Admin Dashboard</a>
+        <a class="navbar-brand" asp-controller="Admin" asp-action="Index">Admin Dashboard</a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -42,7 +42,7 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Admin</div>
-                        <a class="nav-link" asp-page="/Views/Admin/Index">
+                        <a class="nav-link" asp-controller="Admin" asp-action="Index">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
@@ -89,9 +89,12 @@
                         <div class="collapse" id="reservations" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <ul>
-                                    <li class="nav-item">
+                                    <!--
+                                        <li class="nav-item">
                                         <a class="nav-link text-light font-weight-light" asp-area="" asp-controller="Reservation" asp-action="PassangerCount">Create reservation</a>
                                     </li>
+
+                                    -->
                                     <li class="nav-item">
                                         <a class="nav-link text-light font-weight-light" asp-area="" asp-controller="Reservation" asp-action="Index">All reservations</a>
                                     </li>
@@ -123,52 +126,8 @@
         </div>
         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid">
-                    @RenderSection("Scripts", required: false)
-                    @RenderBody()
-                    <h1 class="mt-4">Dashboard</h1>
-                    <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active"></li>
-                    </ol>
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
-                                <div class="card-body">All users count: @FlightsManager.Models.AdminLayoutVM.UsersCount()</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" asp-controller="Admin" asp-action="UserList">View users list</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-warning text-white mb-4">
-                                <div class="card-body">All roles count: @FlightsManager.Models.AdminLayoutVM.RolesCount()</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" asp-controller="Role" asp-action="Index">View roles list</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-success text-white mb-4">
-                                <div class="card-body">All flights count: @FlightsManager.Models.AdminLayoutVM.FlightsCount()</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" asp-controller="Flight" asp-action="Index">View flights list</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-danger text-white mb-4">
-                                <div class="card-body">All reservations count: @FlightsManager.Models.AdminLayoutVM.ReservationsCount()</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" asp-controller="Reservation" asp-action="Index">View reservations list</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @RenderSection("Scripts", required: false)
+                @RenderBody()
             </main>
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid">

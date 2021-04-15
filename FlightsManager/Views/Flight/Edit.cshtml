@@ -2,68 +2,71 @@
 
 @{
     ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Edit</h1>
+<div class="userPage">
+    <h1>Edit</h1>
 
-<h4>Flight</h4>
+    <h4>Flight</h4>
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit" asp-controller="Flight" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div hidden>
-                <label asp-for="AirplaneID" class="control-label"></label>
-                <input asp-for="AirplaneID" class="form-control" />
-                <span asp-validation-for="AirplaneID" class="text-danger"></span>
-            </div>
-            <div>
-                <label asp-for="DestinationFrom" class="control-label"></label>
-                <input asp-for="DestinationFrom" class="form-control" />
-                <span asp-validation-for="DestinationFrom" class="text-danger"></span>
-            </div>
-            <div>
-                <label asp-for="DestinationTo" class="control-label"></label>
-                <input asp-for="DestinationTo" class="form-control" />
-                <span asp-validation-for="DestinationTo" class="text-danger"></span>
-            </div>
-            <div>
-                <label asp-for="TakesOff" class="control-label"></label>
-                <input asp-for="TakesOff" class="form-control" />
-                <span asp-validation-for="TakesOff" class="text-danger"></span>
-            </div>
-            <div>
-                <label asp-for="Landing" class="control-label"></label>
-                <input asp-for="Landing" class="form-control" />
-                <span asp-validation-for="Landing" class="text-danger"></span>
-            </div>
-            <div>
-                <label asp-for="AirplaneType" class="control-label"></label>
-                <input asp-for="AirplaneType" class="form-control" />
-                <span asp-validation-for="AirplaneType" class="text-danger"></span>
-            </div>
-            <div>
-                <label asp-for="PilotName" class="control-label"></label>
-                <input asp-for="PilotName" class="form-control" />
-                <span asp-validation-for="PilotName" class="text-danger"></span>
-            </div>
-            <div>
-                <label asp-for="Capacity" class="control-label"></label>
-                <input asp-for="Capacity" class="form-control" />
-                <span asp-validation-for="Capacity" class="text-danger"></span>
-            </div>
-            <div>
-                <label asp-for="BusinessClassCapacity" class="control-label"></label>
-                <input asp-for="BusinessClassCapacity" class="form-control" />
-                <span asp-validation-for="BusinessClassCapacity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit" asp-controller="Flight" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div hidden>
+                    <label asp-for="AirplaneID" class="control-label"></label>
+                    <input asp-for="AirplaneID" class="form-control" />
+                    <span asp-validation-for="AirplaneID" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="DestinationFrom" class="control-label"></label>
+                    <input asp-for="DestinationFrom" class="form-control" />
+                    <span asp-validation-for="DestinationFrom" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="DestinationTo" class="control-label"></label>
+                    <input asp-for="DestinationTo" class="form-control" />
+                    <span asp-validation-for="DestinationTo" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="TakesOff" class="control-label"></label>
+                    <input asp-for="TakesOff" class="form-control" />
+                    <span asp-validation-for="TakesOff" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="Landing" class="control-label"></label>
+                    <input asp-for="Landing" class="form-control" />
+                    <span asp-validation-for="Landing" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="AirplaneType" class="control-label"></label>
+                    <input asp-for="AirplaneType" class="form-control" />
+                    <span asp-validation-for="AirplaneType" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="PilotName" class="control-label"></label>
+                    <input asp-for="PilotName" class="form-control" />
+                    <span asp-validation-for="PilotName" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="Capacity" class="control-label"></label>
+                    <input asp-for="Capacity" class="form-control" />
+                    <span asp-validation-for="Capacity" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="BusinessClassCapacity" class="control-label"></label>
+                    <input asp-for="BusinessClassCapacity" class="form-control" />
+                    <span asp-validation-for="BusinessClassCapacity" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" style="margin-top:20px;" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">BackToList</a>
+    <div>
+        <a asp-action="Index">Back</a>
+    </div>
 </div>

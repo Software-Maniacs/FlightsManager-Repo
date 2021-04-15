@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 
 namespace FlightsManager.Controllers
 {
+    /// <summary>
+    /// The controller for Admin.
+    /// </summary>
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
@@ -21,6 +24,16 @@ namespace FlightsManager.Controllers
         private IPasswordHasher<ApplicationUser> _passwordHasher;
         private ApplicationDbContext _dbContext;
 
+        /// <summary>
+        /// The default constructor for AdminController.
+        /// </summary>
+        /// <remarks>
+        /// When the constructor is initiated, the controller connects to the database.
+        /// </remarks>
+        /// <param name="userManager">Provides the APIs for managing user.</param>
+        /// <param name="roleManager">Provides the APIs for managing roles.</param>
+        /// <param name="passwordHasher">Provides an abstraction for hashing passwords.</param>
+        /// <param name="dbContext">The database context.</param>
         public AdminController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IPasswordHasher<ApplicationUser> passwordHasher, ApplicationDbContext dbContext)
         {
             this._userManager = userManager;
@@ -28,12 +41,19 @@ namespace FlightsManager.Controllers
             this._passwordHasher = passwordHasher;
             this._dbContext = dbContext;
         }
-
+        /// <summary>
+        /// Index action.
+        /// </summary>
+        /// <returns>View of Index.</returns>
         public async Task<IActionResult> Index()
         {
             return View();
         }
 
+        /// <summary>
+        /// Method that lists all users.
+        /// </summary>
+        /// <returns>A view, containing the list of users.</returns>
         public async Task<IActionResult> UserList()
         {
             //var users = await _userManager.Users.Where(u => u.ReservationID == null).ToListAsync();
@@ -65,6 +85,10 @@ namespace FlightsManager.Controllers
             return new List<string>(await _userManager.GetRolesAsync(user));
         }
 
+        /// <summary>
+        /// Method that redirects to the CreateUser view.
+        /// </summary>
+        /// <returns>A view, where the admin can create a user.</returns>
         public IActionResult CreateUser()
         {
             CreateUserViewModel model = new CreateUserViewModel();
@@ -72,6 +96,11 @@ namespace FlightsManager.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Method through which the admin creates a user.
+        /// </summary>
+        /// <param name="createUser">The needed info for the user to be created.</param>
+        /// <returns>If successful, the method redirects to index. If not, it returns back the view.</returns>
         public async Task<IActionResult> Create(CreateUserViewModel createUser)
         {
             var roles = _roleManager.Roles.ToList();
@@ -109,6 +138,11 @@ namespace FlightsManager.Controllers
             return View(createUser);
         }
 
+        /// <summary>
+        /// Method that gets the Edit view.
+        /// </summary>
+        /// <param name="id">The ID of the requested user.</param>
+        /// <returns>If found, it returns the Edit view with the info of the user on it. If not - a NotFound result.</returns>
        [HttpGet]
         public async Task<IActionResult> Edit(string id)
         {
@@ -134,6 +168,11 @@ namespace FlightsManager.Controllers
 
             return View(userViewModel);
         }
+        /// <summary>
+        /// Method through which a user is edited.
+        /// </summary>
+        /// <param name="userViewModel">The view, containing the user's new info.</param>
+        /// <returns>If successful, it redirects to Index. If not, it returns the view again. If the user can't be found - a NotFound result.</returns>
       
         public async Task<IActionResult> Edit(EditUserViewModel userViewModel)
         {
@@ -171,6 +210,11 @@ namespace FlightsManager.Controllers
             }
         }
 
+        /// <summary>
+        /// Method through which a user is deleted.
+        /// </summary>
+        /// <param name="id">The ID of the requested user.</param>
+        /// <returns>If successful, the method redirects to Index. If not, it returns a NotFound result. If the requested user's info is not valid, it returns back the view.</returns>
         public async Task<IActionResult> Delete(string id)
 
         {

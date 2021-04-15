@@ -1,4 +1,4 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 /*!
 * Start Bootstrap - SB Admin v6.0.2 (https://startbootstrap.com/template/sb-admin)
 * Copyright 2013-2020 Start Bootstrap
@@ -2545,7 +2545,6 @@ fieldset:disabled a.btn {
     color: #fff;
     background-color: #007bff;
     border-color: #007bff;
-    margin-top: 50px !important;
 }
     .btn-primary:hover {
         color: #fff;
@@ -2645,6 +2644,7 @@ fieldset:disabled a.btn {
         .btn-success:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus, .show > .btn-success.dropdown-toggle:focus {
             box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
         }
+
 
 .btn-info {
     color: #fff;
@@ -6641,6 +6641,10 @@ a.close.disabled {
 
 .align-text-top {
     vertical-align: text-top !important;
+}
+
+body.bg-primary {
+    background-color: #343a40 !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -10877,3 +10881,10 @@ body {
     .sb-sidenav-light .sb-sidenav-footer {
         background-color: #e9ecef;
     }
+
+.userPage {
+    margin-left:30px;
+    margin-top:20px;
+    margin-right:30px;
+}
+
