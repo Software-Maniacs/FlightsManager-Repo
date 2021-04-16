@@ -113,11 +113,15 @@ namespace FlightsManager.Controllers
         {
             ReservationCreateVM model = new ReservationCreateVM()
             {
-                Flights = await this.db.Flight.ToListAsync(),
+                Flights = await db.Flight.ToListAsync(),
                 PassangerCount = passangerCountVM.PassangerCount,
-                Reservations = new ReservationVM[passangerCountVM.PassangerCount],
-                Flight = db.Flight.FirstOrDefault().AirplaneID
+                Reservations = new ReservationVM[passangerCountVM.PassangerCount]
             };
+
+            if(model.Flights.Count > 0)
+            {
+                model.Flight = model.Flights.FirstOrDefault().AirplaneID;
+            }
 
             return View(model);
         }

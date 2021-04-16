@@ -61,37 +61,37 @@
                                         {
                                             <div class="row">
                                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                                                <label asp-for="Reservations[i].FirstName" class="control-label"></label>
+                                                <label asp-for="Reservations[i].FirstName" class="control-label">First Name</label>
                                                 <input asp-for="Reservations[i].FirstName" class="form-control" />
                                                 <span asp-validation-for="Reservations[i].FirstName" class="text-danger"></span>
                                             </div>
                                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                                                <label asp-for="Reservations[i].MiddleName" class="control-label"></label>
+                                                <label asp-for="Reservations[i].MiddleName" class="control-label">Middle Name</label>
                                                 <input asp-for="Reservations[i].MiddleName" class="form-control" />
                                                 <span asp-validation-for="Reservations[i].MiddleName" class="text-danger"></span>
                                             </div>
                                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                                                <label asp-for="Reservations[i].LastName" class="control-label"></label>
+                                                <label asp-for="Reservations[i].LastName" class="control-label">Last Name</label>
                                                 <input asp-for="Reservations[i].LastName" class="form-control" />
                                                 <span asp-validation-for="Reservations[i].LastName" class="text-danger"></span>
                                             </div>
                                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                                                <label asp-for="Reservations[i].Nationality" class="control-label"></label>
+                                                <label asp-for="Reservations[i].Nationality" class="control-label">Nationality</label>
                                                 <input asp-for="Reservations[i].Nationality" class="form-control" />
                                                 <span asp-validation-for="Reservations[i].Nationality" class="text-danger"></span>
                                             </div>
                                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                                                <label asp-for="Reservations[i].PIN" class="control-label"></label>
+                                                <label asp-for="Reservations[i].PIN" class="control-label">PIN</label>
                                                 <input asp-for="Reservations[i].PIN" class="form-control" />
                                                 <span asp-validation-for="Reservations[i].PIN" class="text-danger"></span>
                                             </div>
                                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                                                <label asp-for="Reservations[i].TelephoneNumber" class="control-label"></label>
+                                                <label asp-for="Reservations[i].TelephoneNumber" class="control-label">Telephone Number</label>
                                                 <input asp-for="Reservations[i].TelephoneNumber" class="form-control" />
                                                 <span asp-validation-for="Reservations[i].TelephoneNumber" class="text-danger"></span>
                                             </div>
                                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                                                <label asp-for="Reservations[i].TicketType" class="control-label"></label>
+                                                <label asp-for="Reservations[i].TicketType" class="control-label">Ticket Type</label>
                                                 <select hidden asp-for="Reservations[i].TicketType">
                                                     <option value="Ordinary">Ordinary</option>
                                                     <option value="Business">Business</option>
@@ -102,12 +102,12 @@
                                         }
                                     <div class="row">
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                                            <label asp-for="Email" class="control-label"></label>
+                                            <label asp-for="Email" class="control-label">Email</label>
                                             <input asp-for="Email" class="form-control" />
                                             <span asp-validation-for="Email" class="text-danger"></span>
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                                            <label asp-for="Flight" class="control-label"></label>
+                                            <label asp-for="Flight" class="control-label">Flight</label>
                                             <select hidden asp-for="Flight" class="form-control">
                                                 @foreach (var item in Model.Flights)
                                                 {

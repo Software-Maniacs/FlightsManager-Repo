@@ -43,7 +43,6 @@ namespace FlightsManager.Models.Reservation
         /// <summary>
         /// The telephone number of the passenger.
         /// </summary>
-        [Required]
         public string TelephoneNumber { get; set; }
         /// <summary>
         /// The type of the passenger's ticket.
