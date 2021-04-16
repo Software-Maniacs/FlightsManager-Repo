@@ -717,3 +717,4 @@ C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp3.1\FlightsManager.dll
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp3.1\FlightsManager.pdb
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager\obj\Debug\netcoreapp3.1\FlightsManager.genruntimeconfig.cache
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager\obj\Debug\netcoreapp3.1\Razor\Views\Reservation\ConfirmReservation.cshtml.g.cs

@@ -33,9 +33,9 @@
             </summary>
             <returns>A view, containing the list of users.</returns>
         </member>
-        <member name="M:FlightsManager.Controllers.AdminController.CreateUser">
+        <member name="M:FlightsManager.Controllers.AdminController.Create">
             <summary>
-            Method that redirects to the CreateUser view.
+            Method that redirects to the Create view.
             </summary>
             <returns>A view, where the admin can create a user.</returns>
         </member>
@@ -414,7 +414,7 @@
         </member>
         <member name="P:FlightsManager.Data.Flight.Capacity">
             <summary>
-            The capacity of passangers that the airplane can hold.
+            The number of ordinary seats that the airplane has.
             </summary>
         </member>
         <member name="P:FlightsManager.Data.Flight.BusinessClassCapacity">
@@ -495,7 +495,7 @@
         </member>
         <member name="P:FlightsManager.Models.Flight.FlightCreateVM.Capacity">
             <summary>
-            The capacity of passengers the plane holds.
+            The number of ordinary seats.
             </summary>
         </member>
         <member name="P:FlightsManager.Models.Flight.FlightCreateVM.BusinessClassCapacity">
@@ -555,7 +555,7 @@
         </member>
         <member name="P:FlightsManager.Models.Flight.FlightEditVM.Capacity">
             <summary>
-            The capacity of passengers the plane holds.
+            The number of ordinary seats.
             </summary>
         </member>
         <member name="P:FlightsManager.Models.Flight.FlightEditVM.BusinessClassCapacity">
@@ -625,7 +625,7 @@
         </member>
         <member name="P:FlightsManager.Models.Flight.FlightVM.Capacity">
             <summary>
-            The capacity of passengers the plane holds.
+            The number of ordinary seats.
             </summary>
         </member>
         <member name="P:FlightsManager.Models.Flight.FlightVM.BusinessClassCapacity">

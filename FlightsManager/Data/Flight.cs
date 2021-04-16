@@ -46,7 +46,7 @@ namespace FlightsManager.Data
         public string PilotName { get; set; }
 
         /// <summary>
-        /// The capacity of passangers that the airplane can hold.
+        /// The number of ordinary seats that the airplane has.
         /// </summary>
         public int Capacity { get; set; }
 

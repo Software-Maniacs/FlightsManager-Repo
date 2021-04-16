@@ -15,4 +15,7 @@ C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManagerSQLForTests\obj\Debug
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManagerSQLForTests\obj\Debug\FlightsManagerSQLForTests.dll
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManagerSQLForTests\obj\Debug\FlightsManagerSQLForTests.pdb
 D:\FlightsManager-Repo\FlightsManagerSQLForTests\obj\Debug\FlightsManagerSQLForTests.sqlprojAssemblyReference.cache
-C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManagerSQLForTests\obj\Debug\FlightsManagerSQLForTests.sqlprojAssemblyReference.cache
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManagerSQLForTests\obj\Debug\Model.xml
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManagerSQLForTests\obj\Debug\refactor.xml
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManagerSQLForTests\obj\Debug\postdeploy.sql
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManagerSQLForTests\obj\Debug\predeploy.sql

@@ -732,3 +732,4 @@ C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager_Tests\obj\Debug\netc
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager_Tests\obj\Debug\netcoreapp3.1\FlightsManager_Tests.pdb
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager_Tests\obj\Debug\netcoreapp3.1\FlightsManager_Tests.genruntimeconfig.cache
 C:\Users\Acer\Desktop\Project\FlightsManager\FlightsManager_Tests\bin\Debug\netcoreapp3.1\FlightsManager.StaticWebAssets.xml
+C:\Users\Niki\Documents\GitHub\FlightsManager-Repo\FlightsManager_Tests\bin\Debug\netcoreapp3.1\FlightsManager.StaticWebAssets.xml
