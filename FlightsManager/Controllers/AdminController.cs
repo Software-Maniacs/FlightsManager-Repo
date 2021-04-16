@@ -93,6 +93,8 @@ namespace FlightsManager.Controllers
         public IActionResult Create()
         {
             CreateUserViewModel model = new CreateUserViewModel();
+            var roles = _roleManager.Roles.ToList();
+            ViewBag.Roles = new SelectList(roles, "Id", "Name");
 
             return View(model);
         }
@@ -105,8 +107,6 @@ namespace FlightsManager.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreateUserViewModel createUser)
         {
-            var roles = _roleManager.Roles.ToList();
-            ViewBag.Roles = new SelectList(roles, "Id", "Name");
             if (ModelState.IsValid)
             {
                 ApplicationUser appUser = new ApplicationUser
