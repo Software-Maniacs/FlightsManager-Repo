@@ -115,7 +115,8 @@ namespace FlightsManager.Controllers
             {
                 Flights = await this.db.Flight.ToListAsync(),
                 PassangerCount = passangerCountVM.PassangerCount,
-                Reservations = new ReservationVM[passangerCountVM.PassangerCount]
+                Reservations = new ReservationVM[passangerCountVM.PassangerCount],
+                Flight = db.Flight.FirstOrDefault().AirplaneID
             };
 
             return View(model);

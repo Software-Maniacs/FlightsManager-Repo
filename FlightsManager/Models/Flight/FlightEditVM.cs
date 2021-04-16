@@ -69,5 +69,9 @@ namespace FlightsManager.Models.Flight
         /// A collection of all the flight's reservations.
         /// </summary>
         public virtual ICollection<FlightsManager.Data.Reservation> Reservations { get; set; }
+
+        public bool IsFirstTime { get; set; }
+
+        public string Message { get; set; }
     }
 }

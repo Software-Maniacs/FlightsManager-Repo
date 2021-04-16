@@ -159,43 +159,75 @@ namespace FlightsManager.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(FlightEditVM model)
         {
-            if (ModelState.IsValid)
+            int minOrdinaryTickets = 0;
+            int minBusinessTickets = 0;
+
+            List<Reservation> reservations = db.Reservation
+                .Where(r => r.FlightID == model.AirplaneID)
+                .ToList();
+
+            foreach (var reservation in reservations)
             {
-                Flight flight = await db.Flight.FindAsync(model.AirplaneID);
-
-                flight.DestinationFrom = model.DestinationFrom;
-                flight.DestinationTo = model.DestinationTo;
-                flight.TakesOff = model.TakesOff;
-                flight.Landing = model.Landing;
-                flight.AirplaneType = model.AirplaneType;
-                flight.PilotName = model.PilotName;
-                flight.Capacity = model.Capacity;
-                flight.BusinessClassCapacity = model.BusinessClassCapacity;
-                flight.Reservations = model.Reservations;
-
-                try
+                List<ApplicationUser> passangers = db.ApplicationUser.Where(p => p.ReservationID == reservation.ID).ToList();
+                foreach (var passanger in passangers)
                 {
-                    db.Update<Flight>(flight);
-                    await db.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    bool isExist = db.Flight.Any(f => f.AirplaneID == flight.AirplaneID);
-
-                    if (!isExist)
+                    if(passanger.TicketType == "Ordinary")
                     {
-                        return NotFound();
+                        minOrdinaryTickets++;
                     }
                     else
                     {
-                        throw;
+                        minBusinessTickets++;
                     }
                 }
-
-                return RedirectToAction(nameof(Index));
             }
 
-            return View(model);
+            if (minBusinessTickets > model.BusinessClassCapacity || minOrdinaryTickets > model.Capacity)
+            {
+                model.IsFirstTime = false;
+                model.Message = $"You have {minOrdinaryTickets} reserved ordinary tickets and {minBusinessTickets} reserved business tickets. Please do not edit ordinary and business tickets less than that!";
+
+                return View(model);
+            }
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    Flight flight = await db.Flight.FindAsync(model.AirplaneID);
+
+                    flight.DestinationFrom = model.DestinationFrom;
+                    flight.DestinationTo = model.DestinationTo;
+                    flight.TakesOff = model.TakesOff;
+                    flight.Landing = model.Landing;
+                    flight.AirplaneType = model.AirplaneType;
+                    flight.PilotName = model.PilotName;
+                    flight.Capacity = model.Capacity;
+                    flight.BusinessClassCapacity = model.BusinessClassCapacity;
+                    flight.Reservations = model.Reservations;
+
+                    try
+                    {
+                        db.Update<Flight>(flight);
+                        await db.SaveChangesAsync();
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+                        bool isExist = db.Flight.Any(f => f.AirplaneID == flight.AirplaneID);
+
+                        if (!isExist)
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
+                    }
+
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+            return View();
         }
 
         /// <summary>
