@@ -39,10 +39,14 @@ namespace FlightsManager.Models.Reservation
         /// <summary>
         /// The email of the passenger.
         /// </summary>
+        [Required]
+        [StringLength(10, MinimumLength = 10, ErrorMessage = "User PIN must be 10 digits long.")]
         public string Email { get; set; }
         /// <summary>
         /// The telephone number of the passenger.
         /// </summary>
+        [Required]
+        [StringLength(10, MinimumLength = 10, ErrorMessage = "Telephone number must be 10 digits long.")]
         public string TelephoneNumber { get; set; }
         /// <summary>
         /// The type of the passenger's ticket.
