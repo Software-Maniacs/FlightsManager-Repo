@@ -165,13 +165,15 @@ namespace FlightsManager.Controllers
             List<Reservation> reservations = db.Reservation
                 .Where(r => r.FlightID == model.AirplaneID)
                 .ToList();
+            List<ApplicationUser> passangers = new List<ApplicationUser>();
 
             foreach (var reservation in reservations)
             {
-                List<ApplicationUser> passangers = db.ApplicationUser.Where(p => p.ReservationID == reservation.ID).ToList();
-                foreach (var passanger in passangers)
+                List<ApplicationUser> passangersLoop = db.ApplicationUser.Where(p => p.ReservationID == reservation.ID).ToList();
+                foreach (var passanger in passangersLoop)
                 {
-                    if(passanger.TicketType == "Ordinary")
+                    passangers.Add(passanger);
+                    if (passanger.TicketType == "Ordinary")
                     {
                         minOrdinaryTickets++;
                     }
@@ -195,6 +197,7 @@ namespace FlightsManager.Controllers
                 {
                     Flight flight = await db.Flight.FindAsync(model.AirplaneID);
 
+                    flight.AirplaneID = flight.AirplaneID;
                     flight.DestinationFrom = model.DestinationFrom;
                     flight.DestinationTo = model.DestinationTo;
                     flight.TakesOff = model.TakesOff;
@@ -207,7 +210,9 @@ namespace FlightsManager.Controllers
 
                     try
                     {
-                        db.Update<Flight>(flight);
+                        db.Update(flight);
+                        reservations.ForEach(r => db.Add(r));
+                        passangers.ForEach(p => db.Add(p));
                         await db.SaveChangesAsync();
                     }
                     catch (DbUpdateConcurrencyException)
@@ -243,7 +248,7 @@ namespace FlightsManager.Controllers
 
             List<ReservationDetailVM> list = new List<ReservationDetailVM>();
 
-            for(int i = 0; i < reservations.Count; i++)
+            for (int i = 0; i < reservations.Count; i++)
             {
                 ReservationDetailVM reservationDetail = new ReservationDetailVM()
                 {
