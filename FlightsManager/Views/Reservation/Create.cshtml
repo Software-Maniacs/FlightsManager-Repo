@@ -92,7 +92,7 @@
                                             </div>
                                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                                 <label asp-for="Reservations[i].TicketType" class="control-label">Ticket Type</label>
-                                                <select asp-for="Reservations[i].TicketType" class="form-control">
+                                                <select hidden asp-for="Reservations[i].TicketType" class="form-control">
                                                     <option value="Ordinary">Ordinary</option>
                                                     <option value="Business">Business</option>
                                                 </select>
@@ -108,7 +108,7 @@
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                             <label asp-for="Flight" class="control-label">Flight</label>
-                                            <select asp-for="Flight" class="form-control">
+                                            <select hidden asp-for="Flight" class="form-control">
                                                 @foreach (var item in Model.Flights)
                                                 {
                                                     <option value="@item.AirplaneID">@item.ToString()</option>
