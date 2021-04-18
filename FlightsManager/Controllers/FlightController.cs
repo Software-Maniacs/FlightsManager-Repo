@@ -51,7 +51,7 @@ namespace FlightsManager.Controllers
                     DestinationFrom = f.DestinationFrom,
                     DestinationTo = f.DestinationTo,
                     TakesOff = f.TakesOff,
-                    Landing = f.Landing,
+                    ContiniusFlight = f.Landing.Subtract(f.TakesOff),
                     AirplaneType = f.AirplaneType,
                     PilotName = f.PilotName,
                     Capacity = f.Capacity,

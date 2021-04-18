@@ -52,7 +52,7 @@
                     <td>@Html.DisplayFor(m => item.DestinationFrom)</td>
                     <td>@Html.DisplayFor(m => item.DestinationTo)</td>
                     <td>@Html.DisplayFor(m => item.TakesOff)</td>
-                    <td>@Html.DisplayFor(m => item.ContiniusFlight)</td>
+                    <td>@item.ContiniusFlight.Days days @item.ContiniusFlight.Hours hours @item.ContiniusFlight.Minutes minutes</td>
                     <td>@Html.DisplayFor(m => item.PilotName)</td>
                     <td>@Html.DisplayFor(m => item.Capacity)</td>
                     <td>@Html.DisplayFor(m => item.BusinessClassCapacity)</td>
